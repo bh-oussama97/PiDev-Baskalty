@@ -6,6 +6,7 @@
 package com.pidev.models;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 //import java.util.Date;
 import javafx.scene.image.Image;
 
@@ -18,16 +19,25 @@ public class produit {
     
     private int id;
     private int quantite;
-    private Date date_ajout;
+    private LocalDateTime  date_ajout;
     private String nom;
     private String reference;
     private float prix;
     private String description;
     private String image;
-    private Date modifie_le;
+    private LocalDateTime modifie_le;
     private int id_user;
     private String categorie;
 
+
+    public LocalDateTime getDate_ajout() {
+        return date_ajout;
+    }
+
+    public void setDate_ajout(LocalDateTime date_ajout) {
+        this.date_ajout = date_ajout;
+    }
+ 
     public produit() {
     }
 
@@ -42,35 +52,7 @@ public class produit {
     public void setId(int id) {
         this.id = id;
     }
-
- 
-    public produit(int id, int quantite, Date date_ajout, String nom, String reference, float prix, String description, String image, Date modifie_le, int id_user, String categorie) {
-        this.id = id;
-        this.quantite = quantite;
-        this.date_ajout = date_ajout;
-        this.nom = nom;
-        this.reference = reference;
-        this.prix = prix;
-        this.description = description;
-        this.image = image;
-        this.modifie_le = modifie_le;
-        this.id_user = id_user;
-        this.categorie = categorie;
-    }
-
-    public produit(int quantite, Date date_ajout, String nom, String reference, float prix, String description, String image, Date modifie_le, int id_user, String categorie) {
-        this.quantite = quantite;
-        this.date_ajout = date_ajout;
-        this.nom = nom;
-        this.reference = reference;
-        this.prix = prix;
-        this.description = description;
-        this.image = image;
-        this.modifie_le = modifie_le;
-        this.id_user = id_user;
-        this.categorie = categorie;
-    }
-
+    
     public int getQuantite() {
         return quantite;
     }
@@ -84,13 +66,34 @@ public class produit {
         return "produit{" + "id=" + id + ", quantite=" + quantite + ", date_ajout=" + date_ajout + ", nom=" + nom + ", reference=" + reference + ", prix=" + prix + ", description=" + description + ", image=" + image + ", modifie_le=" + modifie_le + ", id_user=" + id_user + ", categorie=" + categorie + '}';
     }
 
-    public Date getDate_ajout() {
-        return date_ajout;
+    public produit(int id, int quantite, LocalDateTime date_ajout, String nom, String reference, float prix, String description, String image, LocalDateTime modifie_le, int id_user, String categorie) {
+        this.id = id;
+        this.quantite = quantite;
+        this.date_ajout = date_ajout;
+        this.nom = nom;
+        this.reference = reference;
+        this.prix = prix;
+        this.description = description;
+        this.image = image;
+        this.modifie_le = modifie_le;
+        this.id_user = id_user;
+        this.categorie = categorie;
     }
 
-    public void setDate_ajout(Date date_ajout) {
+    public produit(int quantite, LocalDateTime date_ajout, String nom, String reference, float prix, String description, String image, LocalDateTime modifie_le, int id_user, String categorie) {
+        this.quantite = quantite;
         this.date_ajout = date_ajout;
+        this.nom = nom;
+        this.reference = reference;
+        this.prix = prix;
+        this.description = description;
+        this.image = image;
+        this.modifie_le = modifie_le;
+        this.id_user = id_user;
+        this.categorie = categorie;
     }
+
+ 
 
     public String getNom() {
         return nom;
@@ -132,11 +135,11 @@ public class produit {
         this.image = image;
     }
 
-    public Date getModifie_le() {
+    public LocalDateTime getModifie_le() {
         return modifie_le;
     }
 
-    public void setModifie_le(Date modifie_le) {
+    public void setModifie_le(LocalDateTime modifie_le) {
         this.modifie_le = modifie_le;
     }
 

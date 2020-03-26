@@ -15,7 +15,7 @@ public class DataSource {
     private static DataSource instance;
     private Connection cnx;
 
-    private final String URL = "jdbc:mysql://localhost:3306/baskalti";
+    private final String URL = "jdbc:mysql://localhost:3306/baskaltyy";
     private final String LOGIN = "root";
     private final String PASSWORD = "";
 

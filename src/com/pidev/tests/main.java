@@ -9,7 +9,7 @@ import com.pidev.models.*;
 import com.pidev.services.*;
 import com.pidev.models.produit;
 import java.sql.Date;
-
+import java.time.LocalDateTime;
 /**
  *
  * @author benha
@@ -23,14 +23,16 @@ public class main {
         
       
        ServiceProduit sp = new ServiceProduit();
-     //sp.ajouter(new produit(5,new Date(2020,3, 20),"znenzel","zjngzkgn",2500, "jezbfkzebfz", "bzejkbzekj.jpg", new Date(2020,3,16),1,"Vélos Cross"));
+       
+       produit pmodif = new produit(12, 5 , LocalDateTime.now(), "vélo", "jzngjzn", 400, "bon vélo","velomodif.jpg", LocalDateTime.now(), 2, "veloscross");
+    // sp.ajouter(new produit(6,LocalDateTime.now(),"lunette","RF84984",400, "lunette pour cycler", "lunette.jpg", null,1,"équipements"));
      // sp.ajouter(new produit(5,new Date(2020,3, 20),"znenzel","zjngzkgn",2500, "jezbfkzebfz", "bzejkbzekj.jpg", new Date(2020,3,16),3,"jkzenfzjeknfjkzenf"));
      //sp.afficher().forEach(System.out::println);  
      // sp.afficherParId(2).toString();
      // sp.supprimer(6);
      //sp.modifier(new produit(7,6,new Date(2020,3,20),"vélo","E193JKLMT",500,"bon vélo","vélo.jpg",new Date(2020,3,20),2,"vélos Cross"));
-     
-        System.out.println(" Liste des produits : ");
+     sp.modifier(pmodif);        
+     System.out.println(" Liste des produits : ");
      sp.afficher().forEach(System.out::println);
      
           System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
@@ -86,7 +88,7 @@ public class main {
         
       System.out.println(" Recherche produit par nom   : ");
       
-      sp.RechercherProduitParNom("kjzebfjefbkjzeb").forEach(System.out::println);
+      sp.RechercherProduitParNom("vélo").forEach(System.out::println);
       
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
         
