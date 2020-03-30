@@ -4,11 +4,13 @@
  * and open the template in the editor.
  */
 package com.pidev.tests;
-//import com.pidev.services.ServiceProduit;
+import com.pidev.services.ServiceUser;
+import com.pidev.services.ServicePublication;        
 import com.pidev.models.*;
 import com.pidev.services.*;
 import com.pidev.models.produit;
-import java.sql.Date;
+import com.pidev.models.publication;
+import com.pidev.models.fos_user;
 import java.time.LocalDateTime;
 /**
  *
@@ -95,6 +97,45 @@ public class main {
       System.out.println(" Recherche produit par catégorie  : ");
       
       sp.RechercherProduitParCategorie("aznalzndalkdnalkdnakd").forEach(System.out::println);
-    }
+   
+     
+ ///cyrineeeee   
     
-}
+    
+    ServicePublication spb =new ServicePublication() ;
+    
+    publication publ= new publication ("cyrine", LocalDateTime.now(), "vélo", 1);
+    
+  // spb.ajouter(new publication ("chuiph",LocalDateTime.now(),"znenzel",2));
+   // spb.modifier(publ);        
+    //System.out.println(" Liste des publications : ");
+   // spb.afficher().forEach(System.out::println);
+//spb.supprimer(7);
+
+    ServiceCommentaire  scp = new ServiceCommentaire();
+    scp.ajouter( new commentaire ("kjmdwvqfdol"));
+    
+    
+    
+    
+    ServiceUser suser = new ServiceUser();
+   
+    //suser.AjouterUser(new fos_user ("cyrine","chebby","cyrine@gmail.com","cyrine@gmail.com",1,"cyrine","NULL","vendeur","iqqqqqqqqqqqqvn")) ;
+    
+  //suser.AjouterUser(new fos_user("cyrine","chebby","cyrine@gmail.com","cyrine@gmail.com",1,"cyrine","NULL",1,"iqqqqqqqqqqqqvn"));
+
+       // System.out.println(suser.AfficherUser("cyrine").toString());
+    
+    suser.ModiferUser(3, new fos_user("sadeek", "selmi", "sadek@gmail.com", "sadek", "vendeur", "jldvqjhbv"));
+  //suser.getAllUser().forEach(System.out::println);
+   //suser.Login("cyrine", "cyrine");
+           
+    suser.registerUser(new fos_user("cy","ch","cyrine.ch@gmail.com","cyrine.ch@gmail.com",1,"cyrine","mecanicien","ufohvhnouer",LocalDateTime.now()));
+           
+           
+    //String username, String username_canonical, String email, String email_canonical, int enabled, String password, Date last_login, String confirmation_token, Date password_requested_at, String roles, String image_files,LocalDateTime registration_date) {
+        
+    //username,username_canonical,email,email_canonical,enabled,password,confirmation_token,roles,image_file,registration_date) 
+
+    
+}}

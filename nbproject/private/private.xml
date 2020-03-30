@@ -3,8 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/benha/OneDrive/Documents/NetBeansProjects/Baskalty/src/com/pidev/utils/DataSource.java</file>
-            <file>file:/C:/Users/benha/OneDrive/Documents/NetBeansProjects/Baskalty/src/com/pidev/tests/main.java</file>
+            <file>file:/C:/Users/WSI/Downloads/PiDev-Baskalty-master/src/com/pidev/models/commande.java</file>
+            <file>file:/C:/Users/WSI/Downloads/PiDev-Baskalty-master/src/com/pidev/models/produit.java</file>
+            <file>file:/C:/Users/WSI/Downloads/PiDev-Baskalty-master/src/com/pidev/services/ServicePublication.java</file>
+            <file>file:/C:/Users/WSI/Downloads/PiDev-Baskalty-master/src/com/pidev/tests/main.java</file>
+            <file>file:/C:/Users/WSI/Downloads/PiDev-Baskalty-master/src/com/pidev/services/ServiceCommentaire.java</file>
+            <file>file:/C:/Users/WSI/Downloads/PiDev-Baskalty-master/src/com/pidev/services/ServiceUser.java</file>
+            <file>file:/C:/Users/WSI/Downloads/PiDev-Baskalty-master/src/com/pidev/models/publication.java</file>
+            <file>file:/C:/Users/WSI/Downloads/PiDev-Baskalty-master/src/com/pidev/services/ServiceProduit.java</file>
+            <file>file:/C:/Users/WSI/Downloads/PiDev-Baskalty-master/src/com/pidev/models/commentaire.java</file>
+            <file>file:/C:/Users/WSI/Downloads/PiDev-Baskalty-master/src/com/pidev/services/InterfaceUser.java</file>
+            <file>file:/C:/Users/WSI/Downloads/PiDev-Baskalty-master/src/com/pidev/models/fos_user.java</file>
+            <file>file:/C:/Users/WSI/Downloads/PiDev-Baskalty-master/src/com/pidev/services/IService.java</file>
         </group>
     </open-files>
 </project-private>
