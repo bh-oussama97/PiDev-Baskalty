@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="baskalty.AjoutEventController">
+   <children>
+      <TextField fx:id="nom" layoutX="82.0" layoutY="62.0" prefHeight="25.0" prefWidth="193.0" />
+      <TextField fx:id="location" layoutX="353.0" layoutY="62.0" />
+      <TextField fx:id="prix" layoutX="104.0" layoutY="140.0" />
+      <TextField fx:id="qte" layoutX="308.0" layoutY="128.0" />
+      <TextArea fx:id="description" layoutX="179.0" layoutY="208.0" prefHeight="131.0" prefWidth="200.0" />
+      <Button layoutX="450.0" layoutY="314.0" mnemonicParsing="false" onAction="#Ajout" text="Button" />
+      <DatePicker fx:id="start" layoutX="92.0" layoutY="19.0" />
+      <DatePicker fx:id="fin" layoutX="341.0" layoutY="19.0" />
+      <ImageView fx:id="imageee" fitHeight="101.0" fitWidth="102.0" layoutX="41.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="15.0" layoutY="103.0" mnemonicParsing="false" onAction="#importer" text="Button" />
+   </children>
+</AnchorPane>
