@@ -23,7 +23,6 @@ import java.util.logging.Logger;
  * @author WSI
  */
 public class ServiceUser implements InterfaceUser {
-    private static ServicePublication instance;
     private Statement st;
     private ResultSet rs;
     Connection cnx = DataSource.getInstance().getCnx();
