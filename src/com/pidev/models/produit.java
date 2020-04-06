@@ -27,7 +27,7 @@ public class produit {
     private String image;
     private LocalDateTime modifie_le;
     private int id_user;
-    private String categorie;
+    private int categorie;
 
 
     public LocalDateTime getDate_ajout() {
@@ -41,10 +41,20 @@ public class produit {
     public produit() {
     }
 
-    
-    
-    
+    public produit(int quantite, LocalDateTime date_ajout, String nom, String reference, float prix, String description, String image, LocalDateTime modifie_le) {
+        this.quantite = quantite;
+        this.date_ajout = date_ajout;
+        this.nom = nom;
+        this.reference = reference;
+        this.prix = prix;
+        this.description = description;
+        this.image = image;
+        this.modifie_le = modifie_le;
+    }
 
+    
+    
+  
     public int getId() {
         return id;
     }
@@ -66,7 +76,7 @@ public class produit {
         return "produit{" + "id=" + id + ", quantite=" + quantite + ", date_ajout=" + date_ajout + ", nom=" + nom + ", reference=" + reference + ", prix=" + prix + ", description=" + description + ", image=" + image + ", modifie_le=" + modifie_le + ", id_user=" + id_user + ", categorie=" + categorie + '}';
     }
 
-    public produit(int id, int quantite, LocalDateTime date_ajout, String nom, String reference, float prix, String description, String image, LocalDateTime modifie_le, int id_user, String categorie) {
+    public produit(int id, int quantite, LocalDateTime date_ajout, String nom, String reference, float prix, String description, String image, LocalDateTime modifie_le, int id_user, int categorie) {
         this.id = id;
         this.quantite = quantite;
         this.date_ajout = date_ajout;
@@ -80,7 +90,7 @@ public class produit {
         this.categorie = categorie;
     }
 
-    public produit(int quantite, LocalDateTime date_ajout, String nom, String reference, float prix, String description, String image, LocalDateTime modifie_le, int id_user, String categorie) {
+    public produit(int quantite, LocalDateTime date_ajout, String nom, String reference, float prix, String description, String image, LocalDateTime modifie_le, int id_user, int categorie) {
         this.quantite = quantite;
         this.date_ajout = date_ajout;
         this.nom = nom;
@@ -151,11 +161,11 @@ public class produit {
         this.id_user = id_user;
     }
 
-    public String getCategorie() {
+    public int getCategorie() {
         return categorie;
     }
 
-    public void setCategorie(String categorie) {
+    public void setCategorie(int categorie) {
         this.categorie = categorie;
     }
  

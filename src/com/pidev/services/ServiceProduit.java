@@ -57,8 +57,8 @@ public class ServiceProduit implements IService<produit>{
             pst.setString(5, p.getDescription());
             pst.setFloat(6, p.getPrix());
             pst.setString(7, p.getImage());
-            pst.setString(8, p.getCategorie());
-            pst.setInt(9, p.getId_user());
+            pst.setInt(8,2);
+            pst.setInt(9,3);
             pst.executeUpdate();
             System.out.println("Produit ajouté !");
 
@@ -121,7 +121,7 @@ public class ServiceProduit implements IService<produit>{
                   Timestamp date_modif = rs.getTimestamp("modifiee_le");
                   p.setModifie_le(date_modif.toLocalDateTime());
                   p.setId_user(rs.getInt("iduser"));
-                  p.setCategorie(rs.getString("categorie"));
+                  p.setCategorie(rs.getInt("categorie"));
                   list.add(p);
             }
         } catch (SQLException ex) 
@@ -182,7 +182,7 @@ public class ServiceProduit implements IService<produit>{
                 p.setImage(result.getString("image"));
                  Timestamp date_modif = result.getTimestamp("modifiee_le");
                   p.setModifie_le(date_modif.toLocalDateTime());
-                p.setCategorie(result.getString("categorie"));
+                p.setCategorie(result.getInt("categorie"));
                 p.setId_user(result.getInt("iduser"));
                 p.setPrix(result.getFloat("prix"));
                 lp.add(p); 
@@ -218,7 +218,7 @@ public class ServiceProduit implements IService<produit>{
                 p.setImage(results.getString("image"));
                 Timestamp date_modif = results.getTimestamp("modifiee_le");
                 p.setModifie_le(date_modif.toLocalDateTime());
-                p.setCategorie(results.getString("categorie"));
+                p.setCategorie(results.getInt("categorie"));
                 p.setId_user(results.getInt("iduser"));
                 p.setPrix(results.getFloat("prix"));
                 produits.add(p);
@@ -253,7 +253,7 @@ public class ServiceProduit implements IService<produit>{
                 p.setImage(results.getString("image"));
                 Timestamp date_modif = results.getTimestamp("modifiee_le");
                   p.setModifie_le(date_modif.toLocalDateTime());
-                p.setCategorie(results.getString("categorie"));
+                p.setCategorie(results.getInt("categorie"));
                 p.setId_user(results.getInt("iduser"));
                 p.setPrix(results.getFloat("prix"));     
                 produits.add(p);
@@ -293,7 +293,7 @@ public class ServiceProduit implements IService<produit>{
                 p.setImage(results.getString("image"));
             Timestamp date_modif = results.getTimestamp("modifiee_le");
                   p.setModifie_le(date_modif.toLocalDateTime());
-                p.setCategorie(results.getString("categorie"));
+                p.setCategorie(results.getInt("categorie"));
                 p.setId_user(results.getInt("iduser"));
                 p.setPrix(results.getFloat("prix"));     
                 produits.add(p);
