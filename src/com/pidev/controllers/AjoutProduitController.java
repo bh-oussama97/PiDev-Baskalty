@@ -37,6 +37,7 @@ import javafx.stage.FileChooser;
 public class AjoutProduitController implements Initializable {
 
     
+    
     @FXML
     private TextField nom;
     @FXML
