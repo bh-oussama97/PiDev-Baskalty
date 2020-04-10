@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="566.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pidev.controllers.AdminUsersController">
+   <children>
+      <Pane prefHeight="566.0" prefWidth="202.0" style="-fx-background-color: DA2525;">
+         <children>
+            <ImageView fitHeight="65.0" fitWidth="155.0" layoutX="32.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/logo.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="88.0" prefHeight="56.0" prefWidth="155.0" text="Bienvenue" textFill="#cbcbc3">
+               <font>
+                  <Font name="Century Gothic" size="26.0" />
+               </font>
+            </Label>
+            <Line endX="77.5" layoutX="6.0" layoutY="144.0" startX="-6.0000152587890625" startY="-1.0" stroke="#cbcbc3" />
+            <AnchorPane layoutX="-1.0" layoutY="142.0" prefHeight="121.0" prefWidth="209.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="26.0" layoutY="15.0" prefHeight="27.0" prefWidth="131.0" text="Ici , vous trouvez les" textFill="#cbcbc3">
+                     <font>
+                        <Font name="Century Gothic Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="3.0" layoutY="41.0" prefHeight="27.0" prefWidth="177.0" text="informations concernant" textFill="#cbcbc3">
+                     <font>
+                        <Font name="Century Gothic Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="69.0" prefHeight="27.0" prefWidth="131.0" text="tous les utilisateurs" textFill="#cbcbc3">
+                     <font>
+                        <Font name="Century Gothic Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Line endX="68.0" endY="-46.0" layoutX="16.0" layoutY="154.0" startX="-16.0" startY="-46.0" stroke="#cbcbc3" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="1.0" layoutY="250.0" prefHeight="245.0" prefWidth="206.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="-3.0" layoutY="9.0" prefHeight="40.0" prefWidth="209.0" text="Dashboard" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="56.0" prefHeight="40.0" prefWidth="202.0" text="USERS" textFill="#cbcbcb">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="96.0" prefHeight="40.0" prefWidth="202.0" text="       AJOUTER USER" textFill="#cbcbcb">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="modifuser" alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="138.0" onAction="#modifuser" prefHeight="40.0" prefWidth="202.0" text="MODIFIER USER" textFill="#cbcbcb">
+                     <font>
+                        <Font name="Century Gothic" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="176.0" prefHeight="40.0" prefWidth="202.0" text="SUPPRIMER" textFill="#cbcbcb">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <Separator layoutX="20.0" layoutY="230.0" prefHeight="1.0" prefWidth="155.0" />
+                  <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="14.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
+                     <image>
+                        <Image url="@../../../images/ic_shopping_cart_white_48dp.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="11.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
+                     <image>
+                        <Image url="@../../../images/Person-Male-Light-icon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="11.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
+                     <image>
+                        <Image url="@../../../../../../Downloads/icons8-add-user-male-64.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="14.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
+                     <image>
+                        <Image url="@../../../images/ic_add_shopping_cart_white_48dp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <JFXButton layoutX="32.0" layoutY="505.0" prefHeight="27.0" prefWidth="138.0" style="-fx-border-color: #FFFF;" text="CONTACTEZ NOUS" textFill="#cbcbcb">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="195.0" layoutY="67.0" prefHeight="496.0" prefWidth="561.0">
+         <children>
+            <TableView fx:id="userTable" layoutX="7.0" layoutY="5.0" prefHeight="311.0" prefWidth="586.0">
+              <columns>
+                  <TableColumn fx:id="id" prefWidth="47.0" text="Id" />
+                  <TableColumn fx:id="username" prefWidth="89.0" text="Username" />
+                  <TableColumn fx:id="email" prefWidth="107.0" text="Email" />
+                  <TableColumn fx:id="enabled" prefWidth="70.0" text="Enabled" />
+                  <TableColumn fx:id="password" prefWidth="151.0" text="Password" />
+                  <TableColumn fx:id="last" prefWidth="145.0" text="Last_Login" />
+                  <TableColumn fx:id="image" prefWidth="114.0" text="Image" />
+              </columns>
+            </TableView>
+            <Button fx:id="btnSupprimer" layoutX="168.0" layoutY="328.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="46.0" prefWidth="276.0" style="-fx-background-color: DA2525;" text="Supprimer" />
+            <TextField fx:id="tf_recherche" alignment="CENTER" layoutX="169.0" layoutY="422.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#SearchByName" prefHeight="35.0" prefWidth="275.0" promptText="Rechercher un User">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+            </TextField>
+            <ImageView fitHeight="35.0" fitWidth="46.0" layoutX="124.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Downloads/icons8-search-64.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <Separator layoutX="202.0" layoutY="64.0" prefHeight="1.0" prefWidth="561.0" />
+      <JFXToolbar layoutX="202.0" prefHeight="65.0" prefWidth="586.0" style="-fx-background-color: DA2525;">
+         <right>
+            <ImageView disable="true" fitHeight="30.0" fitWidth="34.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../../../images/menu.png" />
+               </image>
+            </ImageView>
+         </right>
+         <center>
+            <Text fill="#cbcbc3" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome," wrappingWidth="123.71875" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Century Gothic" size="19.0" />
+               </font>
+            </Text>
+         </center>
+      </JFXToolbar>
+   </children>
+</AnchorPane>
