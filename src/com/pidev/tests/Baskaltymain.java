@@ -47,11 +47,7 @@ public class Baskaltymain {
         // scom.ajouter(c2);
         scom.modifier(new commande(2, 1, 2, "96258500", "ariana", "cite elghazela", "hadheka houwa", 8000));
         //scom.supprimer(2);
-        System.out.println("----------------------------------------------------------------------");
-        System.out.println(" Filtrage des produits par odre croissant  : ");
-
-        sp.FiltrerProduitsParOrdreCroissant().forEach(System.out::println);
-        System.out.println("----------------------------------------------------------------------");
+      
 
         System.out.println(" Filtrage des produits par odre décroissant  : ");
 

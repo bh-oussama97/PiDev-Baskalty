@@ -17,6 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.List;
 import java.sql.Timestamp;
+import java.util.stream.Collectors;
 /**
  *
  * @author benha
@@ -50,15 +51,16 @@ public class ServiceProduit implements IService<produit>{
             PreparedStatement pst = cnx.prepareStatement(requete);
             pst.setInt(1,p.getQuantite());
            java.sql.Timestamp javaSqlDate = Timestamp.valueOf(p.getDate_ajout());
-            pst.setTimestamp(2, javaSqlDate);
-           // pst.setDate(2,p.getDate_ajout());
+             pst.setTimestamp(2, javaSqlDate);
             pst.setString(3,p.getNom());
             pst.setString(4, p.getReference());
             pst.setString(5, p.getDescription());
             pst.setFloat(6, p.getPrix());
             pst.setString(7, p.getImage());
-            pst.setInt(8,2);
+            pst.setString(8,p.getCategorie());
             pst.setInt(9,3);
+           
+            //pst.setDate(10,p.getDate_ajout());
             pst.executeUpdate();
             System.out.println("Produit ajouté !");
 
@@ -118,10 +120,10 @@ public class ServiceProduit implements IService<produit>{
                   p.setDescription( rs.getString("description"));
                   p.setPrix(rs.getFloat("prix"));
                   p.setImage(rs.getString("image"));
-                  Timestamp date_modif = rs.getTimestamp("modifiee_le");
-                  p.setModifie_le(date_modif.toLocalDateTime());
+                 // Timestamp date_modif = rs.getTimestamp("modifiee_le");
+                  //p.setModifie_le(date_modif.toLocalDateTime());
                   p.setId_user(rs.getInt("iduser"));
-                  p.setCategorie(rs.getInt("categorie"));
+                  p.setCategorie(rs.getString("categorie"));
                   list.add(p);
             }
         } catch (SQLException ex) 
@@ -181,8 +183,8 @@ public class ServiceProduit implements IService<produit>{
                 p.setDescription(result.getString("description"));
                 p.setImage(result.getString("image"));
                  Timestamp date_modif = result.getTimestamp("modifiee_le");
-                  p.setModifie_le(date_modif.toLocalDateTime());
-                p.setCategorie(result.getInt("categorie"));
+//                  p.setModifie_le(date_modif.toLocalDateTime());
+                p.setCategorie(result.getString("categorie"));
                 p.setId_user(result.getInt("iduser"));
                 p.setPrix(result.getFloat("prix"));
                 lp.add(p); 
@@ -197,8 +199,35 @@ public class ServiceProduit implements IService<produit>{
         }
         return lp;
     }
+   
+  
+    public List<produit> FiltrerProduitsParOrdreCroissant(int prixmax) {
+        List<produit> list = new ArrayList<>();
+        ServiceProduit sp = new ServiceProduit()    ;
+        list = sp.afficher();
+     
+        if (prixmax != -1) {
+            list = list.stream().filter(e -> e.getPrix() <= prixmax).collect(Collectors.toCollection(ArrayList<produit>::new));
+            System.out.println("**3");
+        }
+
+        return list;
+    }
     
-   public List<produit> FiltrerProduitsParOrdreCroissant () {
+    public List<produit> FiltrerProduitsParOrdreDecroissant(int prixmin) {
+        List<produit> list = new ArrayList<>();
+        ServiceProduit sp = new ServiceProduit()    ;
+        list = sp.afficher();
+     
+         if (prixmin != -1) {
+            list = list.stream().filter(e -> e.getPrix() >= prixmin).collect(Collectors.toCollection(ArrayList<produit>::new));
+            System.out.println("**4");
+        }
+        return list;
+
+    }
+    
+   /*public List<produit> FiltrerProduitsParOrdreCroissant () {
         List<produit> produits = new ArrayList<>();
         produit produit = new produit();
         try {
@@ -218,7 +247,7 @@ public class ServiceProduit implements IService<produit>{
                 p.setImage(results.getString("image"));
                 Timestamp date_modif = results.getTimestamp("modifiee_le");
                 p.setModifie_le(date_modif.toLocalDateTime());
-                p.setCategorie(results.getInt("categorie"));
+                p.setCategorie(results.getString("categorie"));
                 p.setId_user(results.getInt("iduser"));
                 p.setPrix(results.getFloat("prix"));
                 produits.add(p);
@@ -229,7 +258,7 @@ public class ServiceProduit implements IService<produit>{
             Logger.getLogger(ServiceProduit.class.getName()).log(Level.SEVERE, null, ex);
         }
         return produits;
-    }
+    }*/
    
    
     public List<produit> FiltrerProduitsParOrdreDecroissant () {
@@ -253,7 +282,7 @@ public class ServiceProduit implements IService<produit>{
                 p.setImage(results.getString("image"));
                 Timestamp date_modif = results.getTimestamp("modifiee_le");
                   p.setModifie_le(date_modif.toLocalDateTime());
-                p.setCategorie(results.getInt("categorie"));
+                p.setCategorie(results.getString("categorie"));
                 p.setId_user(results.getInt("iduser"));
                 p.setPrix(results.getFloat("prix"));     
                 produits.add(p);
@@ -292,8 +321,8 @@ public class ServiceProduit implements IService<produit>{
                 p.setDescription(results.getString("description"));
                 p.setImage(results.getString("image"));
             Timestamp date_modif = results.getTimestamp("modifiee_le");
-                  p.setModifie_le(date_modif.toLocalDateTime());
-                p.setCategorie(results.getInt("categorie"));
+                  //p.setModifie_le(date_modif.toLocalDateTime());
+                p.setCategorie(results.getString("categorie"));
                 p.setId_user(results.getInt("iduser"));
                 p.setPrix(results.getFloat("prix"));     
                 produits.add(p);

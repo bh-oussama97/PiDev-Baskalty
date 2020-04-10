@@ -27,8 +27,17 @@ public class produit {
     private String image;
     private LocalDateTime modifie_le;
     private int id_user;
-    private int categorie;
+    private String categorie;
+     public static int id_pModifier;
 
+    public static int getId_pModifier() {
+        return id_pModifier;
+    }
+
+    public static void setId_pModifier(int id_pModifier) {
+        produit.id_pModifier = id_pModifier;
+    }
+     
 
     public LocalDateTime getDate_ajout() {
         return date_ajout;
@@ -41,7 +50,7 @@ public class produit {
     public produit() {
     }
 
-    public produit(int quantite, LocalDateTime date_ajout, String nom, String reference, float prix, String description, String image, LocalDateTime modifie_le) {
+    public produit(int quantite, LocalDateTime date_ajout, String nom, String reference, float prix, String description, String image, int id_user, String categorie) {
         this.quantite = quantite;
         this.date_ajout = date_ajout;
         this.nom = nom;
@@ -49,8 +58,21 @@ public class produit {
         this.prix = prix;
         this.description = description;
         this.image = image;
-        this.modifie_le = modifie_le;
+        this.id_user = id_user;
+        this.categorie = categorie;
     }
+
+    public produit(int quantite, LocalDateTime date_ajout, String nom, String reference, float prix, String description, String image, String categorie) {
+        this.quantite = quantite;
+        this.date_ajout = date_ajout;
+        this.nom = nom;
+        this.reference = reference;
+        this.prix = prix;
+        this.description = description;
+        this.image = image;
+        this.categorie = categorie;
+    }
+
 
     
     
@@ -76,7 +98,7 @@ public class produit {
         return "produit{" + "id=" + id + ", quantite=" + quantite + ", date_ajout=" + date_ajout + ", nom=" + nom + ", reference=" + reference + ", prix=" + prix + ", description=" + description + ", image=" + image + ", modifie_le=" + modifie_le + ", id_user=" + id_user + ", categorie=" + categorie + '}';
     }
 
-    public produit(int id, int quantite, LocalDateTime date_ajout, String nom, String reference, float prix, String description, String image, LocalDateTime modifie_le, int id_user, int categorie) {
+    public produit(int id, int quantite, LocalDateTime date_ajout, String nom, String reference, float prix, String description, String image, LocalDateTime modifie_le, int id_user, int String) {
         this.id = id;
         this.quantite = quantite;
         this.date_ajout = date_ajout;
@@ -90,7 +112,7 @@ public class produit {
         this.categorie = categorie;
     }
 
-    public produit(int quantite, LocalDateTime date_ajout, String nom, String reference, float prix, String description, String image, LocalDateTime modifie_le, int id_user, int categorie) {
+    public produit(int quantite, LocalDateTime date_ajout, String nom, String reference, float prix, String description, String image, LocalDateTime modifie_le, int id_user, int String) {
         this.quantite = quantite;
         this.date_ajout = date_ajout;
         this.nom = nom;
@@ -161,12 +183,13 @@ public class produit {
         this.id_user = id_user;
     }
 
-    public int getCategorie() {
+    public String getCategorie() {
         return categorie;
     }
 
-    public void setCategorie(int categorie) {
+    public void setCategorie(String categorie) {
         this.categorie = categorie;
     }
+
  
 }
