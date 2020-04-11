@@ -25,7 +25,7 @@ public class Baskalty extends Application {
 
        
             //FXMLLoader loader = new FXMLLoader(getClass().getResource(""));
-         Parent root = FXMLLoader.load(getClass().getResource("/com/pidev/views/Produits.fxml"));
+         Parent root = FXMLLoader.load(getClass().getResource("/com/pidev/views/PageAccueilProduits.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("Baskalty");
         stage.setScene(scene);

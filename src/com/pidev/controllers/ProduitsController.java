@@ -383,7 +383,7 @@ public class ProduitsController implements Initializable
         {
             box2.setVisible(true);
 
-           p2= TroisAnnonces.get(0);
+           p2= TroisAnnonces.get(1);
              FileInputStream input = null;
            input = new FileInputStream("src/images/"+TroisAnnonces.get(1).getImage());
             Image imageFile = new Image(input);
@@ -404,7 +404,7 @@ public class ProduitsController implements Initializable
         {
            
             box3.setVisible(true);
-           p3 = TroisAnnonces.get(0);
+           p3 = TroisAnnonces.get(2);
             categorie3.setText(TroisAnnonces.get(2).getCategorie());
              FileInputStream input = null;
            input = new FileInputStream("src/images/"+TroisAnnonces.get(2).getImage());
@@ -428,7 +428,7 @@ public class ProduitsController implements Initializable
         {
          
             box4.setVisible(true);
-            p4 = TroisAnnonces.get(0);
+            p4 = TroisAnnonces.get(3);
             categorie4.setText(TroisAnnonces.get(3).getCategorie());
              FileInputStream input = null;
            input = new FileInputStream("src/images/"+TroisAnnonces.get(3).getImage());

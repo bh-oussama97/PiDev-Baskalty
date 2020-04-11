@@ -226,27 +226,13 @@ private void erreurAjout() {
 
             spro.ajouter(p);
             succesAjout();
-            
-           /* FXMLLoader loader=new FXMLLoader(getClass().getResource(("../views/Produits.fxml")));
-            loader.load();
-            AnchorPane parentContent = loader.getRoot();
-                AnchorPane window = (AnchorPane) description.getParent().getParent();
-            ProduitsController cont=loader.getController();
-  
-            window.getChildren().setAll(parentContent);*/
-      
-              //FXMLLoader loader = new FXMLLoader(getClass().getResource("));
-       /*   FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Produits.fxml"));
-        
-       Parent root = loader.load();
-        nom.getScene().setRoot(root);
-        
-        ProduitsController pc = loader.getController();
-        pc.setlabelNom(nom.getText());
-        pc.setlabelCategorie(description.getText());
-        pc.setlabelreference(reference.getText());
-        pc.setlabelPrix(tprix);
-        pc.setImageViewer(nameImage1);*/
+            quantite.clear();
+            nom.clear();
+            reference.clear();
+            prix.clear();
+            description.clear();
+            imageV.setImage(null);
+           
         }
         }
         catch (IOException ex) {
