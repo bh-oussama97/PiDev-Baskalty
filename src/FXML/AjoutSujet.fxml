@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="id_page_ajout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="850.0" style="-fx-background-color: a6a6a6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AjouterSujetController">
+   <children>
+      <Label layoutX="218.0" layoutY="14.0" prefHeight="49.0" prefWidth="352.0" text="Ajouter un Evenement">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="95.0" prefHeight="23.0" prefWidth="92.0" text="Titre">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="f_titre" focusColor="WHITE" layoutX="164.0" layoutY="98.0" onKeyReleased="#verifier_titre" prefHeight="25.0" prefWidth="174.0" styleClass="text-area" stylesheets="@style.css" unFocusColor="WHITE" />
+      <Label layoutX="52.0" layoutY="151.0" prefHeight="17.0" prefWidth="145.0" text="Adresse" textFill="#4d4d4d">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="f_location" focusColor="WHITE" layoutX="169.0" layoutY="154.0" onKeyReleased="#verifier_location" styleClass="text-area" stylesheets="@style.css" unFocusColor="WHITE" />
+      <Label layoutX="63.0" layoutY="250.0" text="Date Fin" textFill="#686666">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="204.0" prefHeight="30.0" prefWidth="121.0" text="Date Début" textFill="#908e8e">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="313.0" text="Prix" textFill="#393838">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="f_prix" layoutX="184.0" layoutY="316.0" onKeyReleased="#verifier_prix" styleClass="text-area" stylesheets="@style.css" unFocusColor="WHITE" />
+      <Label layoutX="39.0" layoutY="379.0" text="nombre place" textFill="#4a4949">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="f_quantity" focusColor="WHITE" layoutX="189.0" layoutY="376.0" onKeyReleased="#verifier_quantity" styleClass="text-area" stylesheets="@style.css" unFocusColor="WHITE" />
+      <Label layoutX="67.0" layoutY="453.0" prefHeight="27.0" prefWidth="102.0" text="Description">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <JFXTextArea fx:id="id_description" focusColor="#a84740" layoutX="181.0" layoutY="434.0" onKeyReleased="#verifier_description" prefHeight="64.0" prefWidth="237.0" styleClass="text-area" stylesheets="@stylesheet.css" unFocusColor="WHITE" />
+      <JFXButton fx:id="id_add" layoutX="645.0" layoutY="481.0" onAction="#add" prefHeight="36.0" prefWidth="190.0" ripplerFill="#973030" style="-fx-border-color: #2A73FF; -fx-border-radius: 20; -fx-background-color: transparent;" styleClass="item_button" stylesheets="@style.css" text="Ajouter">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="id_verifier_titre" layoutX="343.0" layoutY="95.0" prefHeight="30.0" prefWidth="190.0" textFill="#f8f7f7">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="id_verifier_description" layoutX="430.0" layoutY="466.0" prefHeight="30.0" prefWidth="163.0" textFill="#f8f7f7">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="f_dateDeb" layoutX="169.0" layoutY="206.0" />
+      <DatePicker fx:id="f_datefin" layoutX="164.0" layoutY="253.0" />
+      <ImageView fx:id="imagee" fitHeight="150.0" fitWidth="200.0" layoutX="615.0" layoutY="206.0" onMouseClicked="#addImage" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="683.0" layoutY="268.0" prefHeight="21.0" prefWidth="114.0" text="Importer image">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="id_verifier_adresse" layoutX="380.0" layoutY="158.0" prefHeight="27.0" prefWidth="145.0" />
+      <Label fx:id="id_verifier_start" layoutX="380.0" layoutY="210.0" prefHeight="27.0" prefWidth="128.0" />
+      <Label fx:id="id_verifier_end" layoutX="380.0" layoutY="257.0" prefHeight="27.0" prefWidth="135.0" />
+      <Label fx:id="id_verifier_prix" layoutX="366.0" layoutY="319.0" prefHeight="30.0" prefWidth="145.0" />
+      <Label fx:id="id_verifier_quantity" layoutX="358.0" layoutY="375.0" prefHeight="27.0" prefWidth="174.0" />
+   </children>
+</AnchorPane>
