@@ -37,7 +37,7 @@
             <Image url="@../../../images/PadLock-icon.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="494.0" layoutY="23.0" prefHeight="46.0" prefWidth="118.0" style="-fx-background-color: #5D625A; -fx-border-color: #a0a2ab;" text="Se connecter " textFill="#bcd3ae">
+      <JFXButton fx:id="log" layoutX="494.0" layoutY="23.0" onAction="#login" prefHeight="46.0" prefWidth="118.0" style="-fx-background-color: #5D625A; -fx-border-color: #a0a2ab;" text="Se connecter " textFill="#bcd3ae">
          <font>
             <Font name="Century Gothic" size="14.0" />
          </font>

@@ -21,7 +21,7 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author LENOVO
+ * @author Cyrine
  */
 public class AdminController implements Initializable {
 

@@ -4,7 +4,7 @@
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXToolbar?>
-<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
@@ -16,24 +16,24 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="576.0" prefWidth="706.0" style="-fx-background-color: #242424;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pidev.controllers.AdminController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="801.0" style="-fx-background-color: #242424;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pidev.controllers.ModifierUserController">
    <children>
       <Label layoutX="375.0" layoutY="141.0" text="Modifier User" textFill="#cd0a21">
          <font>
             <Font name="Century Gothic Bold" size="36.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="name" focusColor="WHITE" layoutX="396.0" layoutY="216.0" maxWidth="243.0" minWidth="243.0" prefHeight="34.0" prefWidth="243.0" promptText="Nouveau nom" unFocusColor="WHITE">
+      <JFXTextField fx:id="username" focusColor="WHITE" layoutX="396.0" layoutY="216.0" maxWidth="243.0" minWidth="243.0" prefHeight="34.0" prefWidth="243.0" promptText="Nouveau nom" unFocusColor="WHITE">
          <font>
             <Font name="Century Gothic" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField fx:id="password" focusColor="WHITE" layoutX="395.0" layoutY="258.0" maxWidth="251.0" minWidth="251.0" prefHeight="34.0" prefWidth="251.0" promptText="Nouveau mot de passe " unFocusColor="#fffdfd">
+      <JFXPasswordField fx:id="pass" focusColor="WHITE" layoutX="395.0" layoutY="258.0" maxWidth="251.0" minWidth="251.0" prefHeight="34.0" prefWidth="251.0" promptText="Nouveau mot de passe " unFocusColor="#fffdfd">
          <font>
             <Font name="Century Gothic" size="14.0" />
          </font>
       </JFXPasswordField>
-      <JFXButton fx:id="enregistrer" layoutX="372.0" layoutY="416.0" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #F70A24;" text="Enregistrer " textFill="#e8e8eb">
+      <JFXButton layoutX="372.0" layoutY="416.0" onAction="#register" prefHeight="34.0" prefWidth="207.0" style="-fx-background-color: #F70A24;" text="Enregistrer " textFill="#e8e8eb">
          <font>
             <Font name="Century Gothic" size="17.0" />
          </font>
@@ -48,7 +48,7 @@
             <Image url="@../../../images/PadLock-icon.png" />
          </image>
       </ImageView>
-      <ComboBox fx:id="role" layoutX="460.0" layoutY="343.0" prefHeight="34.0" prefWidth="173.0" promptText="Modifier votre rôle " visibleRowCount="5" />
+       <ChoiceBox fx:id="ChoiceBox" layoutX="448.0" layoutY="347.0" prefWidth="150.0" />
       <ImageView fitHeight="30.0" fitWidth="25.0" layoutX="369.0" layoutY="306.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/mail-icon-email-icon-design-email-attachment-red-logo-line-symbol-png-clip-art.jpg" />
@@ -59,12 +59,12 @@
             <Font name="Century Gothic" size="20.0" />
          </font>
       </Label>
-      <JFXPasswordField fx:id="password1" focusColor="WHITE" layoutX="397.0" layoutY="298.0" maxWidth="251.0" minWidth="251.0" prefHeight="34.0" prefWidth="251.0" promptText="Nouveau E-mail" unFocusColor="#fffdfd">
+      <JFXPasswordField fx:id="email" focusColor="WHITE" layoutX="397.0" layoutY="298.0" maxWidth="251.0" minWidth="251.0" prefHeight="34.0" prefWidth="251.0" promptText="Nouveau E-mail" unFocusColor="#fffdfd">
          <font>
             <Font name="Century Gothic" size="14.0" />
          </font>
       </JFXPasswordField>
-      <Pane layoutX="-1.0" prefHeight="595.0" prefWidth="213.0" style="-fx-background-color: DA2525;">
+      <Pane layoutX="-1.0" prefHeight="596.0" prefWidth="213.0" style="-fx-background-color: DA2525;">
          <children>
             <ImageView fitHeight="65.0" fitWidth="155.0" layoutX="22.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -104,45 +104,45 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="users" alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="56.0" onAction="#users" prefHeight="40.0" prefWidth="202.0" text="Users" textFill="#cbcbcb">
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="56.0" prefHeight="40.0" prefWidth="202.0" text="PROFILE" textFill="#cbcbcb">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="96.0" prefHeight="40.0" prefWidth="202.0" text="       AJOUTER USER" textFill="#cbcbcb">
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="96.0" prefHeight="40.0" prefWidth="202.0" text="MAGASIN" textFill="#cbcbcb">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="138.0" prefHeight="40.0" prefWidth="202.0" text="MODIFIER USER" textAlignment="CENTER" textFill="#cbcbcb" textOverrun="CENTER_ELLIPSIS">
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="138.0" prefHeight="40.0" prefWidth="202.0" text="EVENEMENTS" textAlignment="CENTER" textFill="#cbcbcb" textOverrun="CENTER_ELLIPSIS">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="176.0" prefHeight="40.0" prefWidth="202.0" text="SUPPRIMER" textFill="#cbcbcb">
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="176.0" prefHeight="40.0" prefWidth="202.0" text="MAITENANCE" textFill="#cbcbcb">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </JFXButton>
                   <Separator layoutX="20.0" layoutY="230.0" prefHeight="1.0" prefWidth="155.0" />
-                  <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="14.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
+                  <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="11.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
                      <image>
-                        <Image url="@../../../images/ic_shopping_cart_white_48dp.png" />
+                        <Image url="@../../../images/92571524_1530264090481423_8598503446892511232_n.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="11.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
+                  <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="14.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
                      <image>
                         <Image url="@../../../images/Person-Male-Light-icon.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="11.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
                      <image>
-                        <Image url="@../../../images/ic_local_hospital_white_48dp.png" />
+                        <Image url="@../../../images/shop.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="14.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
                      <image>
-                        <Image url="@../../../images/ic_add_shopping_cart_white_48dp.png" />
+                        <Image url="@../../../images/92647698_2663287580571870_7699823377480941568_n.png" />
                      </image>
                   </ImageView>
                </children>
@@ -154,7 +154,7 @@
             </JFXButton>
          </children>
       </Pane>
-      <JFXToolbar layoutX="212.0" prefHeight="65.0" prefWidth="561.0" style="-fx-background-color: DA2525;">
+      <JFXToolbar layoutX="212.0" prefHeight="65.0" prefWidth="589.0" style="-fx-background-color: DA2525;">
          <right>
             <ImageView disable="true" fitHeight="26.0" fitWidth="28.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                <image>
@@ -170,5 +170,15 @@
             </Text>
          </center>
       </JFXToolbar>
+      <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="21.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
+         <image>
+            <Image url="@../../../images/92571524_1530264090481423_8598503446892511232_n.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="46.0" fitWidth="41.0" focusTraversable="true" layoutX="263.0" layoutY="518.0" onDragDetected="#retour" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Downloads/icons8-go-back-64.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

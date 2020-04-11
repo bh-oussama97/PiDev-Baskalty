@@ -64,6 +64,8 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        email.setStyle("-fx-text-inner-color: #D7D7D7;");
+        password.setStyle("-fx-text-inner-color: #D7D7D7;");
        loginService.readinifile(path,email,password,remember);
     }    
 
@@ -86,6 +88,21 @@ public class LoginController implements Initializable {
             return;
         }
        
+           
+            if(ser.getUserByuserName(email.getText()).getRoles().equals("a:1:{i:0;s:16:\"ROLE_INTERNAUTE\";}"))
+        {
+            Parent root = FXMLLoader.load(getClass().getResource("/com/pidev/views/AcceuilUser.fxml"));   
+            Scene scene = new Scene(root);
+             Node node =(Node)event.getSource();
+                stage = (Stage)node.getScene().getWindow();
+                stage.close();
+     
+            stage.setScene(scene);
+            stage.show();
+            stage.setResizable(false);
+            return;
+        }
+           
         
         Connection conn = DataSource.getInstance().getCnx();
         String req= "Select * from fos_user where (username=? or email=?)";

@@ -13,11 +13,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="566.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pidev.controllers.AdminController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pidev.controllers.AcceuilUserController">
    <children>
-      <Pane prefHeight="566.0" prefWidth="202.0" style="-fx-background-color: DA2525;">
+      <AnchorPane id="AnchorPane" prefHeight="573.0" prefWidth="749.0" style="-fx-background-color: #242424;" AnchorPane.leftAnchor="0.0" />
+      <Pane layoutX="-1.0" prefHeight="573.0" prefWidth="223.0" style="-fx-background-color: DA2525;">
          <children>
-            <ImageView fitHeight="65.0" fitWidth="155.0" layoutX="22.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="65.0" fitWidth="138.0" layoutX="22.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../images/logo.png" />
                </image>
@@ -40,7 +41,7 @@
                         <Font name="Century Gothic Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="69.0" prefHeight="27.0" prefWidth="131.0" text="tous les informations " textFill="#cbcbc3">
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="69.0" prefHeight="27.0" prefWidth="131.0" text="tous les utilisateurs" textFill="#cbcbc3">
                      <font>
                         <Font name="Century Gothic Bold" size="13.0" />
                      </font>
@@ -55,17 +56,22 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="users" alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="56.0" onAction="#users" prefHeight="40.0" prefWidth="202.0" text="USERS" textFill="#cbcbcb">
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="56.0" onAction="#modiferuser" prefHeight="40.0" prefWidth="202.0" text="PROFILE" textFill="#cbcbcb">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="96.0" prefHeight="40.0" prefWidth="202.0" text="MAGASIN" textFill="#cbcbcb">
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="96.0" prefHeight="40.0" prefWidth="202.0" text="MAGASIN" textFill="#cbcbcb">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="176.0" prefHeight="40.0" prefWidth="202.0" text="MAINTENANCE" textFill="#cbcbcb">
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="138.0" prefHeight="40.0" prefWidth="202.0" text="EVENEMENTS" textAlignment="CENTER" textFill="#cbcbcb" textOverrun="CENTER_ELLIPSIS">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="176.0" prefHeight="40.0" prefWidth="202.0" text="MAITENANCE" textFill="#cbcbcb">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -73,46 +79,34 @@
                   <Separator layoutX="20.0" layoutY="230.0" prefHeight="1.0" prefWidth="155.0" />
                   <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="14.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
                      <image>
-                        <Image url="@../../../images/ic_shopping_cart_white_48dp.png" />
+                        <Image url="@../../../images/92571524_1530264090481423_8598503446892511232_n.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="11.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
+                  <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="15.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
                      <image>
                         <Image url="@../../../images/Person-Male-Light-icon.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="11.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
+                  <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="13.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
                      <image>
                         <Image url="@../../../images/shop.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="12.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
+                  <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="14.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
                      <image>
                         <Image url="@../../../images/92647698_2663287580571870_7699823377480941568_n.png" />
                      </image>
                   </ImageView>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="-3.0" layoutY="135.0" prefHeight="40.0" prefWidth="202.0" text="EVENEMENT" textFill="#cbcbcb">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </JFXButton>
-                  <ImageView fitHeight="27.0" fitWidth="26.0" layoutX="12.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
-                     <image>
-                        <Image url="@../../../images/92571524_1530264090481423_8598503446892511232_n.png" />
-                     </image>
-                  </ImageView>
                </children>
             </AnchorPane>
-            <JFXButton layoutX="32.0" layoutY="497.0" prefHeight="40.0" prefWidth="138.0" style="-fx-border-color: #FFFF;" text="CONTACTEZ NOUS" textFill="#cbcbcb">
+            <JFXButton layoutX="32.0" layoutY="505.0" prefHeight="27.0" prefWidth="138.0" style="-fx-border-color: #FFFF;" text="CONTACTEZ NOUS" textFill="#cbcbcb">
                <font>
                   <Font size="13.0" />
                </font>
             </JFXButton>
          </children>
       </Pane>
-      <AnchorPane layoutX="195.0" layoutY="67.0" prefHeight="496.0" prefWidth="561.0" />
-      <Separator layoutX="202.0" layoutY="64.0" prefHeight="1.0" prefWidth="561.0" />
-      <JFXToolbar layoutX="202.0" prefHeight="65.0" prefWidth="561.0" style="-fx-background-color: DA2525;">
+      <JFXToolbar layoutX="222.0" prefHeight="65.0" prefWidth="527.0" style="-fx-background-color: DA2525;">
          <right>
             <ImageView disable="true" fitHeight="26.0" fitWidth="28.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                <image>
@@ -121,7 +115,7 @@
             </ImageView>
          </right>
          <center>
-            <Text fill="#cbcbc3" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, Admin" wrappingWidth="181.71875" BorderPane.alignment="CENTER">
+            <Text fill="#cbcbc3" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, " wrappingWidth="181.71875" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Century Gothic" size="19.0" />
                </font>

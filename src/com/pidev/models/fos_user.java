@@ -190,6 +190,12 @@ public class fos_user {
         this.roles = roles;
     }
 
+    public fos_user(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
    
     }
 

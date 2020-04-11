@@ -5,6 +5,7 @@
  */
 package com.pidev.controllers;
 
+import com.pidev.models.fos_user;
 import com.pidev.utils.DataSource;
 import java.io.IOException;
 import java.net.URL;
@@ -22,6 +23,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -36,7 +38,7 @@ import org.mindrot.jbcrypt.BCrypt;
  * @author Cyrine
  */
 public class RegisterController implements Initializable {
-    // add roles depend in what the hell u have
+    
     ObservableList<String> ChoiceBoxlist = FXCollections.
             observableArrayList("Internaute","Vendeur","Locateur", "Mécanicien","Association");
 
@@ -62,7 +64,9 @@ public class RegisterController implements Initializable {
         // TODO
         ChoiceBox.setItems(ChoiceBoxlist);
         ChoiceBox.setValue("mm");
-        
+        username.setStyle("-fx-text-inner-color: #D7D7D7;");
+        email.setStyle("-fx-text-inner-color: #D7D7D7;");
+        pass.setStyle("-fx-text-inner-color: #D7D7D7;");
     }   
    
    
@@ -71,6 +75,34 @@ public class RegisterController implements Initializable {
    
     private void register(ActionEvent event) throws SQLException, IOException {
         Connection conn = DataSource.getInstance().getCnx(); 
+         String tnom = username.getText();
+            String temail = email.getText();
+            String tpass = pass.getText(); 
+            boolean valid=true;
+            
+             if (tnom.equals(""))
+        {
+             Alert alert = new Alert(Alert.AlertType.ERROR);
+               alert.setContentText("nom vide!!");
+        alert.showAndWait();
+           valid = false; 
+        }
+              if (temail.equals(""))
+        {
+             Alert alert = new Alert(Alert.AlertType.ERROR);
+               alert.setContentText("email vide!!");
+        alert.showAndWait();
+           valid = false; 
+        }
+               if (tpass.equals(""))
+        {
+             Alert alert = new Alert(Alert.AlertType.ERROR);
+               alert.setContentText("pass vide!!");
+        alert.showAndWait();
+           valid = false; 
+        }
+                else {
+                  fos_user fu = new fos_user(tnom,tpass,temail);
         String req= "INSERT INTO fos_user (username,email,password,phone,roles) VALUES (?,?,?,'0000','a:0:{}')";
         String req1= "SELECT * FROM fos_user WHERE email=?";
         PreparedStatement prs= conn.prepareStatement(req);
@@ -79,16 +111,17 @@ public class RegisterController implements Initializable {
         prs.setString(2, email.getText());
         String pwd = BCrypt.hashpw(pass.getText(),BCrypt.gensalt(13));
         prs.setString(3, pwd.substring(0,2)+"y"+pwd.substring(3));
-
+               
       
                    prs.executeUpdate();
-              Parent root = FXMLLoader.load(getClass().getResource("/com/pidev/views/AffichageUser.fxml"));
+                   // it should be redirected to accuiel page not admin !eyy 9a3da n5amem ? ki t5amem ta3ml kifi ? 
+              Parent root = FXMLLoader.load(getClass().getResource("/com/pidev/views/AcceuilUser.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.hide();
             stage.setScene(scene);
             stage.show();
-          }
+          }}
           
           
               
@@ -118,5 +151,16 @@ public class RegisterController implements Initializable {
         stage.show(); 
     
     }
+    @FXML
+    private void login(ActionEvent event) throws IOException {
+    Parent root = FXMLLoader.load(getClass().getResource("/com/pidev/views/LoginMain.fxml"));
+
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.hide();
+        stage.setScene(scene);
+        stage.show(); 
     
+    
+    }
 }

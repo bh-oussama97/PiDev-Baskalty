@@ -150,7 +150,7 @@ p = userTable.getSelectionModel().getSelectedItem();
 
 
    @FXML
-    private void modifuser(ActionEvent event) throws IOException {
+    private void modiferuser(ActionEvent event) throws IOException {
     Parent root = FXMLLoader.load(getClass().getResource("/com/pidev/views/ModifierUser.fxml"));
 
         Scene scene = new Scene(root);
