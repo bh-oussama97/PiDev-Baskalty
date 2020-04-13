@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import Entite.Categorie;
+
 import Entite.events;
 import Service.EvenementService;
 import com.jfoenix.controls.JFXCheckBox;

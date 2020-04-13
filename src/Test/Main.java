@@ -1,9 +1,6 @@
 package Test;
 
-import Entite.Categorie;
-import static Entite.Categorie.branche;
-import static Entite.Categorie.credits;
-import static Entite.Categorie.paiement;
+
 import Entite.Comment;
 import Entite.participer;
 

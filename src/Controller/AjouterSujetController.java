@@ -5,7 +5,6 @@
  */
 package Controller;
 
-import Entite.Categorie;
 import Entite.events;
 import Service.EvenementService;
 import Test.MainFX;
@@ -64,7 +63,7 @@ public class AjouterSujetController implements Initializable {
     private JFXButton id_add;
     @FXML
     private JFXTextArea id_description;
-    private JFXComboBox<Categorie> id_categorie;
+   // private JFXComboBox<Categorie> id_categorie;
 
     @FXML
     private AnchorPane id_page_ajout;
@@ -209,7 +208,7 @@ public class AjouterSujetController implements Initializable {
     public static String saveToFileImageNormal(Image image) throws SQLException, IOException {
 
         String ext = "jpg";
-        File dir = new File("C:/Users/selmi/OneDrive/Bureau/Medical-Question-Answering-Dataset-Covid19-master/baskalty/src/Images");
+        File dir = new File("C:/Users/benha/OneDrive/Documents/NetBeansProjects/Baskalty/src/Images");
         String name = String.format("%s.%s", RandomStringUtils.randomAlphanumeric(8), ext);
         File outputFile = new File(dir, name);
         BufferedImage bImage = SwingFXUtils.fromFXImage(image, null);

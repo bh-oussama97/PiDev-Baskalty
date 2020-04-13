@@ -5,7 +5,7 @@
  */
 package Service;
 
-import Entite.Categorie;
+
 import Entite.events;
 import Entite.User;
 import Utils.DataSource;
@@ -128,7 +128,7 @@ public class EvenementService {
         }
         return test;
     }
-    public List<events> readAllSByCategorie(Categorie caString) throws SQLException {
+  /*  public List<events> readAllSByCategorie(Categorie caString) throws SQLException {
         List<events> list = new ArrayList<>();
         ResultSet res = ste.executeQuery("select * from events WHERE themeid='" + caString.name()+ "'");
         events com = null;
@@ -139,7 +139,7 @@ public class EvenementService {
         }
         System.out.println(list);
         return list;
-    }
+    }*/
 
     public Vector<events> readAllS() throws SQLException {
         Vector<events> vector = new Vector<>();

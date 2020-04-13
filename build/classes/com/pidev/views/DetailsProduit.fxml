@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleur.DetailsProduitController">
+   <children>
+      <AnchorPane fx:id="details" layoutX="-2.0" prefHeight="548.0" prefWidth="929.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="470.0" layoutY="68.0" text="Nom :" />
+            <ImageView fx:id="photo" fitHeight="182.0" fitWidth="206.0" layoutX="207.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="470.0" layoutY="127.0" text="Catégorie :" />
+            <Label layoutX="470.0" layoutY="185.0" text="Quantié" />
+            <Label layoutX="470.0" layoutY="157.0" text="Prix:" />
+            <Label layoutX="243.0" layoutY="274.0" text="Description : " />
+            <Text fx:id="descriptionD" layoutX="243.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Label fx:id="categorieD" layoutX="563.0" layoutY="128.0" text="Label" />
+            <Label fx:id="nomD" layoutX="563.0" layoutY="69.0" text="Label" />
+            <Label fx:id="quantiteD" layoutX="567.0" layoutY="186.0" text="Label" />
+            <Label fx:id="prixD" layoutX="565.0" layoutY="158.0" text="Label" />
+            <Label fx:id="idp1" layoutX="587.0" layoutY="40.0" text="idProduit" />
+            <Label layoutX="475.0" layoutY="40.0" text="Produit numéro :">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="470.0" layoutY="99.0" text="Réference :" />
+            <Label fx:id="referenceD" layoutX="563.0" layoutY="100.0" text="Label" />
+            <JFXButton fx:id="commander" layoutX="599.0" layoutY="389.0" onAction="#CommanderProduit" prefHeight="33.0" prefWidth="114.0" ripplerFill="#cbcbc3" style="-fx-background-color: #242424;" text="Commander" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnRMagasin" alignment="CENTER" contentDisplay="TOP" layoutX="217.0" layoutY="397.0" onAction="#RetourAumagasin" prefHeight="33.0" prefWidth="142.0" style="-fx-background-color: e3051a;" text="Retour Au magasin" textFill="WHITE" textOverrun="CLIP">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="366.0" layoutY="462.0" onAction="#ModifierProduit" prefHeight="33.0" prefWidth="97.0" ripplerFill="#cbcbc3" style="-fx-background-color: #242424;" text="Modifier" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="CENTER" contentDisplay="TOP" layoutX="475.0" layoutY="462.0" onAction="#supprimerProduit" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: e3051a;" text="Supprimer" textFill="WHITE" textOverrun="CLIP">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
