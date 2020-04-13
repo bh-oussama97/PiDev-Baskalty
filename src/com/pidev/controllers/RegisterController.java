@@ -5,6 +5,7 @@
  */
 package com.pidev.controllers;
 
+import com.jfoenix.controls.JFXDatePicker;
 import com.pidev.models.fos_user;
 import com.pidev.utils.DataSource;
 import java.io.IOException;
@@ -13,7 +14,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -52,6 +56,8 @@ public class RegisterController implements Initializable {
     
     @FXML
     private ChoiceBox ChoiceBox;
+    
+    private JFXDatePicker last_login;
    
   
    
@@ -63,7 +69,6 @@ public class RegisterController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         ChoiceBox.setItems(ChoiceBoxlist);
-        ChoiceBox.setValue("mm");
         username.setStyle("-fx-text-inner-color: #D7D7D7;");
         email.setStyle("-fx-text-inner-color: #D7D7D7;");
         pass.setStyle("-fx-text-inner-color: #D7D7D7;");
@@ -78,6 +83,7 @@ public class RegisterController implements Initializable {
          String tnom = username.getText();
             String temail = email.getText();
             String tpass = pass.getText(); 
+            Object trole = ChoiceBox.getValue();
             boolean valid=true;
             
              if (tnom.equals(""))
@@ -87,23 +93,31 @@ public class RegisterController implements Initializable {
         alert.showAndWait();
            valid = false; 
         }
-              if (temail.equals(""))
+        
+               if (tpass.equals("") )
         {
              Alert alert = new Alert(Alert.AlertType.ERROR);
-               alert.setContentText("email vide!!");
+               alert.setContentText("Pass vide!!");
         alert.showAndWait();
            valid = false; 
         }
-               if (tpass.equals(""))
+                      if (tpass.length() < 6 )
         {
              Alert alert = new Alert(Alert.AlertType.ERROR);
-               alert.setContentText("pass vide!!");
+               alert.setContentText("Pass too short");
+        alert.showAndWait();
+           valid = false; 
+        }
+                     if (validateEmaill() == false)
+        {
+             Alert alert = new Alert(Alert.AlertType.ERROR);
+               alert.setContentText("Email Not Valide!!");
         alert.showAndWait();
            valid = false; 
         }
                 else {
                   fos_user fu = new fos_user(tnom,tpass,temail);
-        String req= "INSERT INTO fos_user (username,email,password,phone,roles) VALUES (?,?,?,'0000','a:0:{}')";
+        String req= "INSERT INTO fos_user (username,email,password,phone,roles,enabled ) VALUES (?,?,?,'0000',?,?)";
         String req1= "SELECT * FROM fos_user WHERE email=?";
         PreparedStatement prs= conn.prepareStatement(req);
         PreparedStatement prs1= conn.prepareStatement(req1);
@@ -111,8 +125,10 @@ public class RegisterController implements Initializable {
         prs.setString(2, email.getText());
         String pwd = BCrypt.hashpw(pass.getText(),BCrypt.gensalt(13));
         prs.setString(3, pwd.substring(0,2)+"y"+pwd.substring(3));
-               
-      
+        prs.setString(4, (String) ChoiceBox.getValue());
+        if(ChoiceBox.getValue().equals("Internaute")){
+        prs.setInt(5, 1);}
+         //last_login.setValue(LocalDate.now());
                    prs.executeUpdate();
                    // it should be redirected to accuiel page not admin !eyy 9a3da n5amem ? ki t5amem ta3ml kifi ? 
               Parent root = FXMLLoader.load(getClass().getResource("/com/pidev/views/AcceuilUser.fxml"));
@@ -162,5 +178,18 @@ public class RegisterController implements Initializable {
         stage.show(); 
     
     
+    }
+    
+    //validate email Advanced Function
+    
+    private boolean validateEmaill(){
+        Pattern p = Pattern.compile("[a-zA-Z0-9][a-zA-Z0-9._]*@[a-zA-Z0-9]+([.][a-zA-Z]+)+");
+        Matcher m = p.matcher(email.getText());
+        if(m.find() && m.group().equals(email.getText())){
+            return true;
+        }else{
+            
+            return false;            
+        }
     }
 }
