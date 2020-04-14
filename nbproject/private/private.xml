@@ -2,6 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/yaya/Desktop/pi%20java/dedev/PiDev-Baskalty-master/src/com/pidev/controllers/MecanicienController.java</file>
+            <file>file:/C:/Users/yaya/Desktop/pi%20java/dedev/PiDev-Baskalty-master/src/com/pidev/services/ServiceProduit.java</file>
+            <file>file:/C:/Users/yaya/Desktop/pi%20java/dedev/PiDev-Baskalty-master/src/com/pidev/services/ServiceMaintenance.java</file>
+            <file>file:/C:/Users/yaya/Desktop/pi%20java/dedev/PiDev-Baskalty-master/src/com/pidev/models/produit.java</file>
+            <file>file:/C:/Users/yaya/Desktop/pi%20java/dedev/PiDev-Baskalty-master/src/com/pidev/tests/Baskalty.java</file>
+            <file>file:/C:/Users/yaya/Desktop/pi%20java/dedev/PiDev-Baskalty-master/src/com/pidev/controllers/PageAccueilProduitsController.java</file>
+            <file>file:/C:/Users/yaya/Desktop/pi%20java/dedev/PiDev-Baskalty-master/src/com/pidev/controllers/DetailsMecanicienController.java</file>
+            <file>file:/C:/Users/yaya/Desktop/pi%20java/dedev/PiDev-Baskalty-master/src/com/pidev/models/mecanicien.java</file>
+            <file>file:/C:/Users/yaya/Desktop/pi%20java/dedev/PiDev-Baskalty-master/src/com/pidev/controllers/AjoutMecanicienController.java</file>
+            <file>file:/C:/Users/yaya/Desktop/pi%20java/dedev/PiDev-Baskalty-master/src/com/pidev/views/ListeMecaniciens.fxml</file>
+        </group>
     </open-files>
 </project-private>

@@ -65,7 +65,7 @@ public class PageAccueilProduitsController implements Initializable {
 	public void createPage() {
 		
         try {
-            ajouter = FXMLLoader.load(getClass().getResource("../views/AjoutProduit.fxml"));
+            ajouter = FXMLLoader.load(getClass().getResource("../views/AjoutMecanicien.fxml"));
             setNode(ajouter);
         } catch (IOException ex) {
             Logger.getLogger(PageAccueilProduitsController.class.getName()).log(Level.SEVERE, null, ex);
@@ -79,7 +79,7 @@ public class PageAccueilProduitsController implements Initializable {
               
             magasin.getScene().getWindow().hide();
             Stage produits = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("../views/Produits.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("../views/ListeMecaniciens.fxml"));
             Scene scene = new Scene(root);
             produits.setScene(scene);
             produits.show();
@@ -93,7 +93,7 @@ public class PageAccueilProduitsController implements Initializable {
     @FXML
     private void ajouterProduit(ActionEvent event) {
          try {
-            ajouter = FXMLLoader.load(getClass().getResource("../views/AjoutProduit.fxml"));
+            ajouter = FXMLLoader.load(getClass().getResource("../views/AjoutMecanicien.fxml"));
             setNode(ajouter);
         } catch (IOException ex) {
             Logger.getLogger(PageAccueilProduitsController.class.getName()).log(Level.SEVERE, null, ex);

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
@@ -12,46 +14,58 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="ajout" prefHeight="500.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pidev.controllers.AjoutProduitController">
+<AnchorPane id="AnchorPane" fx:id="ajout" prefHeight="549.0" prefWidth="616.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pidev.controllers.AjoutMecanicienController">
    <children>
-      <Label layoutX="170.0" layoutY="25.0" prefHeight="36.0" prefWidth="226.0" text="Ajouter un produit">
+      <Label layoutX="170.0" layoutY="25.0" prefHeight="36.0" prefWidth="250.0" text="Ajouter Mecanicien">
          <font>
             <Font name="Century Gothic Bold" size="24.0" />
          </font>
       </Label>
-      <GridPane layoutX="138.0" layoutY="72.0" prefHeight="408.0" prefWidth="303.0">
+      <GridPane layoutX="138.0" layoutY="84.0" prefHeight="428.0" prefWidth="376.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="99.0" minWidth="10.0" prefWidth="99.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="101.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="85.0" minHeight="0.0" prefHeight="47.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="55.0" minHeight="5.0" prefHeight="55.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="85.0" minHeight="0.0" prefHeight="47.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="55.0" minHeight="5.0" prefHeight="55.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="19.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="30.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label prefHeight="17.0" prefWidth="69.0" text="Nom " />
             <TextField fx:id="nom" prefHeight="25.0" prefWidth="135.0" GridPane.columnIndex="1" />
-            <Label text="Reference" GridPane.rowIndex="1" />
-            <TextField fx:id="reference" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label text="Description" GridPane.rowIndex="2" />
-            <TextArea fx:id="description" prefHeight="53.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label text="Prix" GridPane.rowIndex="3" />
-            <TextField fx:id="prix" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label text="Catégorie" GridPane.rowIndex="4" />
-            <ComboBox fx:id="categorie" prefHeight="25.0" prefWidth="169.0" promptText="Choisir une catégorie" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label text="Image" GridPane.rowIndex="5" />
-            <ImageView fx:id="imageV" fitHeight="57.0" fitWidth="168.0" onMouseClicked="#addImage" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label text="Photo " GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label text="Quantité" GridPane.rowIndex="6" />
-            <TextField fx:id="quantite" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Button fx:id="btnajouter" mnemonicParsing="false" onAction="#ajouterProduit" text="Ajouter" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="Mail" GridPane.rowIndex="2" />
+            <TextField fx:id="Mail" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Description" GridPane.rowIndex="4" />
+            <TextArea fx:id="description" prefHeight="87.0" prefWidth="219.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Prix" GridPane.rowIndex="5" />
+            <TextField fx:id="prix" prefHeight="35.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Services" GridPane.rowIndex="7" />
+            <ComboBox fx:id="categorie" prefHeight="25.0" prefWidth="169.0" promptText="Choisir une catégorie" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="Image" GridPane.rowIndex="8" />
+            <ImageView fx:id="imageV" fitHeight="57.0" fitWidth="168.0" onMouseClicked="#addImage" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label text="Photo " GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label text="Adomicile" GridPane.rowIndex="9" />
+            <Button fx:id="btnajouter" mnemonicParsing="false" onAction="#ajouterMecanicien" text="Ajouter" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <TextField fx:id="prenom" prefHeight="25.0" prefWidth="135.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="69.0" text="Prenom" GridPane.rowIndex="1" />
+            <TextField fx:id="num_tel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Numéro de tel" GridPane.rowIndex="3" />
+            <SplitPane dividerPositions="0.5116279069767442" prefHeight="53.0" prefWidth="156.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+               <items>
+                  <CheckBox fx:id="box_oui" mnemonicParsing="false" prefHeight="17.0" prefWidth="87.0" text="Oui" />
+                  <CheckBox fx:id="box_non" mnemonicParsing="false" prefHeight="17.0" prefWidth="81.0" text="Non" />
+               </items>
+            </SplitPane>
          </children>
       </GridPane>
    </children>

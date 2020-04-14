@@ -40,7 +40,7 @@
                         <Font name="Century Gothic Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="69.0" prefHeight="27.0" prefWidth="131.0" text="nos produits" textFill="#cbcbc3">
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="69.0" prefHeight="27.0" prefWidth="131.0" text="nos mecaniciens" textFill="#cbcbc3">
                      <font>
                         <Font name="Century Gothic Bold" size="13.0" />
                      </font>
@@ -55,17 +55,17 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="magasin" alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="56.0" onAction="#ListeProduits" prefHeight="40.0" prefWidth="202.0" text="MAGASIN" textFill="#cbcbcb">
+                  <JFXButton fx:id="magasin" alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="56.0" onAction="#ListeProduits" prefHeight="40.0" prefWidth="202.0" text="Liste Mecanicien" textFill="#cbcbcb">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btnajouter" alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="96.0" onAction="#ajouterProduit" prefHeight="40.0" prefWidth="202.0" text="       AJOUTER PRODUIT" textFill="#cbcbcb">
+                  <JFXButton fx:id="btnajouter" alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="96.0" onAction="#ajouterProduit" prefHeight="40.0" prefWidth="202.0" text="       AJOUTER Mecanicien" textFill="#cbcbcb">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutY="136.0" prefHeight="40.0" prefWidth="202.0" text="MON PANIER" textFill="#cbcbcb">
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutY="136.0" prefHeight="40.0" prefWidth="202.0" text="Profile" textFill="#cbcbcb">
                      <font>
                         <Font size="16.0" />
                      </font>
