@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pidev.controllers.DetailsMecanicienController">
+   <children>
+      <AnchorPane fx:id="details" layoutX="-2.0" prefHeight="548.0" prefWidth="929.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="465.0" layoutY="37.0" text="Nom :" />
+            <ImageView fx:id="photo" fitHeight="182.0" fitWidth="206.0" layoutX="207.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="470.0" layoutY="127.0" text="Mail : " />
+            <Label layoutX="471.0" layoutY="185.0" text="tel :" />
+            <Label layoutX="470.0" layoutY="157.0" text="Prix:" />
+            <Label layoutX="243.0" layoutY="274.0" text="Description : " />
+            <Text fx:id="descriptionDt1" layoutX="243.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Label fx:id="MailDt1" layoutX="567.0" layoutY="121.0" text="Label" />
+            <Label fx:id="prenomDt1" layoutX="565.0" layoutY="61.0" text="Label" />
+            <Label fx:id="adomicileDt1" layoutX="565.0" layoutY="219.0" text="Label" />
+            <Label fx:id="prixDt1" layoutX="568.0" layoutY="153.0" text="Label" />
+            <Label layoutX="463.0" layoutY="92.0" text="Service :" />
+            <Label fx:id="servicesDt1" layoutX="567.0" layoutY="90.0" text="Label" />
+            <JFXButton fx:id="contacteDt1" layoutX="599.0" layoutY="389.0" onAction="#CommanderProduit" prefHeight="33.0" prefWidth="114.0" ripplerFill="#cbcbc3" style="-fx-background-color: #242424;" text="contacter" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnRMagasin" alignment="CENTER" contentDisplay="TOP" layoutX="217.0" layoutY="397.0" onAction="#RetourAumagasin" prefHeight="33.0" prefWidth="142.0" style="-fx-background-color: e3051a;" text="Retour Home" textFill="WHITE" textOverrun="CLIP">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="366.0" layoutY="462.0" onAction="#ModifierProduit" prefHeight="33.0" prefWidth="97.0" ripplerFill="#cbcbc3" style="-fx-background-color: #242424;" text="Modifier" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="CENTER" contentDisplay="TOP" layoutX="475.0" layoutY="462.0" onAction="#supprimerProduit" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: e3051a;" text="Supprimer" textFill="WHITE" textOverrun="CLIP">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="465.0" layoutY="61.0" text="Prenom :" />
+            <Label fx:id="nomD1" layoutX="564.0" layoutY="39.0" prefWidth="28.0" text="Label" />
+            <Label layoutX="470.0" layoutY="219.0" text="Adomicile" />
+            <Label fx:id="num_telDt11" layoutX="568.0" layoutY="185.0" text="Label" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

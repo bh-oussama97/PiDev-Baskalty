@@ -1,0 +1,167 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Controlleur;
+
+import com.jfoenix.controls.JFXButton;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.animation.FadeTransition;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+
+/**
+ * FXML Controller class
+ *
+ * @author benha
+ */
+public class PageAccueilProduitsController implements Initializable {
+
+    private JFXButton magasin;
+    @FXML
+    private JFXButton btnajouter;
+  
+    
+  
+    @FXML
+    private AnchorPane holderPane;
+    AnchorPane ajouter;
+    @FXML
+    private JFXButton mesProduits;
+    @FXML
+    private JFXButton gererMesProduits;
+    @FXML
+    private JFXButton contacteznous;
+    @FXML
+    private ImageView logout;
+    @FXML
+    private ImageView user;
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+        
+        createPage();
+    }   
+    
+   private void setNode (Node node)
+   {
+       holderPane.getChildren().clear();
+       holderPane.getChildren().add((Node) node);
+       FadeTransition ft = new FadeTransition(Duration.millis(1500));
+        ft.setNode(node);
+        ft.setFromValue(0.1);
+        ft.setToValue(1);
+        ft.setCycleCount(1);
+        ft.setAutoReverse(false);
+        ft.play();
+   }
+	public void createPage() {
+		
+        try {
+            ajouter = FXMLLoader.load(getClass().getResource("/com/pidev/views/AjoutProduit.fxml"));
+            setNode(ajouter);
+        } catch (IOException ex) {
+            Logger.getLogger(PageAccueilProduitsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+	}
+
+    private void ListeProduits(ActionEvent event) {
+        
+          try {
+              
+            magasin.getScene().getWindow().hide();
+            Stage produits = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("/com/pidev/views/Produits.fxml"));
+            Scene scene = new Scene(root);
+            produits.setScene(scene);
+            produits.show();
+            produits.setResizable(false);
+
+        } catch (Exception e) {
+            System.out.println(" Error  : " + e);
+        }
+    }
+
+    @FXML
+    private void ajouterProduit(ActionEvent event) {
+         try {
+            ajouter = FXMLLoader.load(getClass().getResource("/com/pidev/views/AjoutProduit.fxml"));
+            setNode(ajouter);
+        } catch (IOException ex) {
+            Logger.getLogger(PageAccueilProduitsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+
+    private void mouselogout(MouseEvent event) throws IOException {
+         Parent root = FXMLLoader.load(getClass().getResource("/com/pidev/views/LoginMain.fxml"));
+
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.hide();
+        stage.setScene(scene);
+        stage.show(); 
+    }
+
+    private void modiferuser(MouseEvent event) throws IOException {
+        
+       Parent root = FXMLLoader.load(getClass().getResource("/com/pidev/views/ModifierUser.fxml"));
+
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.hide();
+        stage.setScene(scene);
+        stage.show(); 
+    
+    }
+
+    private void retour(ActionEvent event)  throws IOException {
+          Parent root = FXMLLoader.load(getClass().getResource("/com/pidev/views/AccueilUser.fxml"));
+
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.hide();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void MesProduits(ActionEvent event) {
+    }
+
+    @FXML
+    private void GererProduits(ActionEvent event) {
+    }
+
+    @FXML
+    private void contactezNous(ActionEvent event) {
+    }
+
+    @FXML
+    private void Logout(MouseEvent event) {
+    }
+
+    @FXML
+    private void ModifierProfile(MouseEvent event) {
+    }
+    }
+    
+

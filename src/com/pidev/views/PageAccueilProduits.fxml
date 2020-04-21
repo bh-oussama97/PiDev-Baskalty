@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="holderPane" prefHeight="566.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pidev.controllers.PageAccueilProduitsController">
+<AnchorPane id="AnchorPane" fx:id="holderPane" prefHeight="566.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleur.PageAccueilProduitsController">
    <children>
       <Pane prefHeight="566.0" prefWidth="202.0" style="-fx-background-color: #242424;">
          <children>
@@ -105,23 +105,28 @@
             </JFXButton>
          </children>
       </Pane>
-      <AnchorPane fx:id="holderPane" layoutX="202.0" layoutY="65.0" prefHeight="500.0" prefWidth="561.0" />
+      <AnchorPane fx:id="holderPane" layoutX="202.0" layoutY="98.0" prefHeight="467.0" prefWidth="561.0" />
       <Separator layoutX="202.0" layoutY="64.0" prefHeight="1.0" prefWidth="561.0" />
-      <JFXToolbar layoutX="202.0" prefHeight="65.0" prefWidth="561.0" style="-fx-background-color: #242424;">
+      <JFXToolbar layoutX="202.0" prefHeight="98.0" prefWidth="561.0" style="-fx-background-color: #242424;">
          <right>
-            <ImageView disable="true" fitHeight="26.0" fitWidth="28.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="56.0" fitWidth="40.0" onMouseClicked="#mouselogout" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                <image>
-                  <Image url="@../../../images/menu.png" />
+                  <Image url="@../../../images/log-out.png" />
                </image>
             </ImageView>
          </right>
          <center>
-            <Text fill="#cbcbc3" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome," wrappingWidth="123.71875" BorderPane.alignment="CENTER">
+            <Text fill="#cbcbc3" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="Bienvenue" wrappingWidth="181.71875" BorderPane.alignment="CENTER">
                <font>
-                  <Font name="Century Gothic" size="19.0" />
+                  <Font name="Century Gothic" size="25.0" />
                </font>
             </Text>
          </center>
       </JFXToolbar>
+      <ImageView fitHeight="56.0" fitWidth="26.0" layoutX="668.0" layoutY="41.0" onMouseClicked="#modiferuser" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
+         <image>
+            <Image url="@../../../images/Person-Male-Light-icon.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
