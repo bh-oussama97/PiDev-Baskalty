@@ -6,6 +6,7 @@
 package Entite;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
    
 /**
  *
@@ -14,13 +15,38 @@ import java.sql.Date;
 public class panier {
     
     private int id_panier;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
     private int user_id;
     private int produit_id;
     private int quantite;
-    private float prix;
-    private String date_ajout;
+    private int prix;
+    private LocalDateTime date_ajout;
+    private String name;
+    private String image;
 
-    public panier(int id_panier, int user_id, int produit_id, int quantite, float prix, String date_ajout) {
+    public panier(int quantite, int prix, String name, String image) {
+      
+        this.quantite = quantite;
+        this.prix = prix;
+        this.name = name;
+        this.image = image;
+    }
+    public panier(int id_panier, int user_id, int produit_id, int quantite, int prix, LocalDateTime date_ajout) {
         this.id_panier = id_panier;
         this.user_id = user_id;
         this.produit_id = produit_id;
@@ -29,10 +55,26 @@ public class panier {
         this.date_ajout = date_ajout;
     }
 
-    public panier() {
+    public panier(int id_panier, int user_id, int produit_id, int quantite, int prix) {
+        this.id_panier = id_panier;
+        this.user_id = user_id;
+        this.produit_id = produit_id;
+        this.quantite = quantite;
+        this.prix = prix;
     }
 
-    public panier(int user_id, int produit_id, int quantite, float prix, String date_ajout) {
+    public panier(int user_id, int produit_id, int quantite, int prix) {
+        this.user_id = user_id;
+        this.produit_id = produit_id;
+        this.quantite = quantite;
+        this.prix = prix;
+    }
+
+    public panier() 
+    {
+    }
+
+    public panier(int user_id, int produit_id, int quantite, int prix, LocalDateTime date_ajout) {
         this.user_id = user_id;
         this.produit_id = produit_id;
         this.quantite = quantite;
@@ -79,19 +121,19 @@ public class panier {
         this.quantite = quantite;
     }
 
-    public float getPrix() {
+    public int getPrix() {
         return prix;
     }
 
-    public void setPrix(float prix) {
+    public void setPrix(int prix) {
         this.prix = prix;
     }
 
-    public String getDate_ajout() {
+    public LocalDateTime getDate_ajout() {
         return date_ajout;
     }
 
-    public void setDate_ajout(String date_ajout) {
+    public void setDate_ajout(LocalDateTime date_ajout) {
         this.date_ajout = date_ajout;
     }
     

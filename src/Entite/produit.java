@@ -22,8 +22,15 @@ public class produit {
     private LocalDateTime  date_ajout;
     private String nom;
     private String reference;
+    private int prix;
+    private String description;
+    private String image;
+    private LocalDateTime modifie_le;
+    private int id_user;
+    private int categorie;
+     public static int id_pModifier;
 
-    public produit(int id, int quantite, String nom, String reference, float prix, String description, String image, LocalDateTime modifie_le, String categorie) {
+    public produit(int id, int quantite, String nom, String reference, int prix, String description, String image, LocalDateTime modifie_le, int categorie) {
         this.id = id;
         this.quantite = quantite;
         this.nom = nom;
@@ -35,7 +42,7 @@ public class produit {
         this.categorie = categorie;
     }
 
-    public produit(int id, int quantite, String nom, String reference, float prix, String description, String image, String categorie) {
+    public produit(int id, int quantite, String nom, String reference, int prix, String description, String image, int categorie) {
         this.id = id;
         this.quantite = quantite;
         this.nom = nom;
@@ -45,13 +52,7 @@ public class produit {
         this.image = image;
         this.categorie = categorie;
     }
-    private float prix;
-    private String description;
-    private String image;
-    private LocalDateTime modifie_le;
-    private int id_user;
-    private String categorie;
-     public static int id_pModifier;
+    
 
     public static int getId_pModifier() {
         return id_pModifier;
@@ -77,7 +78,7 @@ public class produit {
     public produit() {
     }
 
-    public produit(int quantite, LocalDateTime date_ajout, String nom, String reference, float prix, String description, String image, int id_user, String categorie) {
+    public produit(int quantite, LocalDateTime date_ajout, String nom, String reference, int prix, String description, String image, int id_user, int categorie) {
         this.quantite = quantite;
         this.date_ajout = date_ajout;
         this.nom = nom;
@@ -89,7 +90,7 @@ public class produit {
         this.categorie = categorie;
     }
 
-    public produit(int quantite, LocalDateTime date_ajout, String nom, String reference, float prix, String description, String image, String categorie) {
+    public produit(int quantite, LocalDateTime date_ajout, String nom, String reference, int prix, String description, String image, int categorie) {
         this.quantite = quantite;
         this.date_ajout = date_ajout;
         this.nom = nom;
@@ -125,7 +126,7 @@ public class produit {
         return "produit{" + "id=" + id + ", quantite=" + quantite + ", date_ajout=" + date_ajout + ", nom=" + nom + ", reference=" + reference + ", prix=" + prix + ", description=" + description + ", image=" + image + ", modifie_le=" + modifie_le + ", id_user=" + id_user + ", categorie=" + categorie + '}';
     }
 
-    public produit(int id, int quantite, LocalDateTime date_ajout, String nom, String reference, float prix, String description, String image, LocalDateTime modifie_le, int id_user, int String) {
+    public produit(int id, int quantite, LocalDateTime date_ajout, String nom, String reference, int prix, String description, String image, LocalDateTime modifie_le, int id_user, int String) {
         this.id = id;
         this.quantite = quantite;
         this.date_ajout = date_ajout;
@@ -139,7 +140,8 @@ public class produit {
         this.categorie = categorie;
     }
 
-    public produit(int quantite, LocalDateTime date_ajout, String nom, String reference, float prix, String description, String image, LocalDateTime modifie_le, int id_user, int String) {
+    public produit(int quantite, LocalDateTime date_ajout, String nom, String reference, int
+            prix, String description, String image, LocalDateTime modifie_le, int id_user, int String) {
         this.quantite = quantite;
         this.date_ajout = date_ajout;
         this.nom = nom;
@@ -170,11 +172,11 @@ public class produit {
         this.reference = reference;
     }
 
-    public float getPrix() {
+    public int getPrix() {
         return prix;
     }
 
-    public void setPrix(float prix) {
+    public void setPrix(int prix) {
         this.prix = prix;
     }
 
@@ -210,11 +212,11 @@ public class produit {
         this.id_user = id_user;
     }
 
-    public String getCategorie() {
+    public int getCategorie() {
         return categorie;
     }
 
-    public void setCategorie(String categorie) {
+    public void setCategorie(int categorie) {
         this.categorie = categorie;
     }
 

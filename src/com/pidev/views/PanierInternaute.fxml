@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="610.0" style="-fx-background-color: #cbcbcb;" stylesheets="@../../../Font/font.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleur.PanierInternauteController">
+   <children>
+      <ImageView fitHeight="23.0" fitWidth="33.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#Retour" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/arrow_left.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <JFXButton fx:id="btncommander" alignment="CENTER" contentDisplay="CENTER" layoutX="483.0" layoutY="399.0" onAction="#Commander" prefHeight="37.0" prefWidth="107.0" stylesheets="@../../../Style/buttonStyle.css" text="Commander">
+         <styleClass>
+            <String fx:value="modifier" />
+            <String fx:value="modifier:hover" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Pagination layoutX="205.0" layoutY="326.0" prefHeight="52.0" prefWidth="211.0" />
+      <Label layoutX="27.0" layoutY="383.0" prefHeight="45.0" prefWidth="211.0" style="-fx-font-size: 16; -fx-alignment: center; -fx-background-color: #242424; -fx-text-fill: white;" styleClass="BarlowRegular" text="Total du panier" />
+      <Pane layoutX="27.0" layoutY="428.0" prefHeight="73.0" prefWidth="211.0" styleClass="paneborderinside" stylesheets="@../../../Style/paneStyle.css">
+         <children>
+            <Label layoutX="3.0" layoutY="18.0" prefHeight="37.0" prefWidth="73.0" styleClass="BarlowRegular" text="  Total :" />
+            <Label fx:id="totalpanier" layoutX="115.0" layoutY="18.0" prefHeight="37.0" prefWidth="96.0" styleClass="BarlowRegular" text="                          Dt" />
+         </children>
+      </Pane>
+      <Label layoutX="209.0" layoutY="19.0" prefHeight="37.0" prefWidth="192.0" style="-fx-font-size: 24; -fx-alignment: center; -fx-text-fill: white;" styleClass="RobotoBold" text="Mon Panier" />
+      <Pane layoutX="27.0" layoutY="81.0" prefHeight="42.0" prefWidth="125.0" style="-fx-border-width: 1;" styleClass="paneborderinside" stylesheets="@../../../Style/paneStyle.css">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-5.0" layoutY="-2.0" prefHeight="42.0" prefWidth="131.0" styleClass="BarlowBold" text="Produits" />
+         </children>
+      </Pane>
+      <Pane layoutX="152.0" layoutY="81.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="126.0" styleClass="paneborderinside" stylesheets="@../../../Style/paneStyle.css">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-6.0" layoutY="1.0" prefHeight="37.0" prefWidth="125.0" styleClass="BarlowBold" text="Nom" />
+         </children>
+      </Pane>
+      <Pane layoutX="449.0" layoutY="81.0" prefHeight="42.0" prefWidth="107.0" styleClass="paneborderinside" stylesheets="@../../../Style/paneStyle.css">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="2.0" prefHeight="37.0" prefWidth="107.0" styleClass="BarlowBold" text="Total" />
+         </children>
+      </Pane>
+      <Pane layoutX="278.0" layoutY="81.0" prefHeight="42.0" prefWidth="86.0" style="-fx-border-width: 1;" styleClass="paneborderinside" stylesheets="@../../../Style/paneStyle.css">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" prefHeight="42.0" prefWidth="85.0" styleClass="BarlowBold" text="Prix" />
+         </children>
+      </Pane>
+      <Pane layoutX="364.0" layoutY="81.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="85.0" styleClass="paneborderinside" stylesheets="@../../../Style/paneStyle.css">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-5.0" prefHeight="42.0" prefWidth="86.0" styleClass="BarlowBold" text="Quantité" />
+         </children>
+      </Pane>
+      <ImageView fx:id="image1" fitHeight="70.0" fitWidth="86.0" layoutX="47.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="namelabel" alignment="CENTER" contentDisplay="CENTER" layoutX="153.0" layoutY="135.0" prefHeight="42.0" prefWidth="125.0" styleClass="BarlowRegular" stylesheets="@../../../Style/labelStyle.css" text="Label" />
+      <Label fx:id="prixlabel" alignment="CENTER" layoutX="279.0" layoutY="137.0" prefHeight="37.0" prefWidth="85.0" styleClass="BarlowRegular" stylesheets="@../../../Style/labelStyle.css" text="Label" />
+      <Label fx:id="quantite" alignment="CENTER" layoutX="370.0" layoutY="134.0" prefHeight="42.0" prefWidth="73.0" styleClass="BarlowRegular" stylesheets="@../../../Style/labelStyle.css" text="Label" />
+      <Label fx:id="totalprix" alignment="CENTER" layoutX="460.0" layoutY="135.0" prefHeight="37.0" prefWidth="86.0" styleClass="BarlowRegular" stylesheets="@../../../Style/labelStyle.css" text="Label" />
+      <ImageView fitHeight="25.0" fitWidth="52.0" layoutX="567.0" layoutY="141.0" onMouseClicked="#delete1" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/trash.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

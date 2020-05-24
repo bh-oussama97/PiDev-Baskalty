@@ -5,29 +5,42 @@
  */
 package Controlleur;
 
+import Entite.panier;
 import com.jfoenix.controls.JFXButton;
 import Entite.produit;
+import Service.ServiceCategorie;
+import Service.ServicePanier;
 import Service.ServiceProduit;
 import static java.awt.SystemColor.window;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.util.Duration;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 /**
  * FXML Controller class
@@ -37,29 +50,38 @@ import javafx.stage.Stage;
 public class DetailsProduitController implements Initializable {
 
     @FXML
-    private AnchorPane details;
-    @FXML
     private ImageView photo;
     @FXML
-    private Text descriptionD;
+    private Label descriptionD;
     @FXML
     private Label categorieD;
     @FXML
     private Label nomD;
     @FXML
-    private Label quantiteD;
+    private Spinner<Integer> quantiteD;
     @FXML
     private Label prixD;
-    @FXML
     private Label idp1;
     @FXML
     private Label referenceD;
     produit pdetails = new produit();
     @FXML
     private JFXButton btnRMagasin;
-    @FXML
-    private JFXButton commander;
     
+    
+    private static DetailsProduitController instance;
+    @FXML
+    private AnchorPane details;
+    
+    public DetailsProduitController()
+    {
+       instance = this ;
+    }
+    
+    public static DetailsProduitController getInstance()
+    {
+        return instance;
+    }
     
       public void setproduit(produit p) {
         this.pdetails = p;
@@ -74,17 +96,21 @@ public class DetailsProduitController implements Initializable {
     }    
     
     
-     public void init() {
+     public void init() throws SQLException {
       
         ServiceProduit sp =new ServiceProduit();
-        idp1.setText(Integer.toString(pdetails.getId()));
+        ServiceCategorie sc = new ServiceCategorie();
+//        idp1.setText(Integer.toString(pdetails.getId()));
         nomD.setText(pdetails.getNom());
-        categorieD.setText(pdetails.getCategorie());
-        quantiteD.setText(Integer.toString(pdetails.getQuantite()));
-        prixD.setText(Float.toString(pdetails.getPrix()));
+        categorieD.setText(sc.getCategorieNameById(pdetails.getCategorie()));
+      
+      
+        prixD.setText(Integer.toString(pdetails.getPrix()));
         descriptionD.setText(pdetails.getDescription());
         referenceD.setText(pdetails.getReference());
          putImageViewer(pdetails.getImage());
+         
+         quantiteD.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, pdetails.getQuantite()));
      
     }
      
@@ -111,51 +137,43 @@ public class DetailsProduitController implements Initializable {
 
 
     @FXML
-    private void RetourAumagasin(ActionEvent event) {
-        
-          try {
-              
-            btnRMagasin.getScene().getWindow().hide();
+    private void RetourAumagasin(ActionEvent event) throws IOException {
+      
+    btnRMagasin.getScene().getWindow().hide();
             Stage produits = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("/com/pidev/views/Produits.fxml"));
-            Scene scene = new Scene(root);
+            Parent root = FXMLLoader.load(getClass().getResource("/com/pidev/views/PageAccueilProduits.fxml"));
+            Scene scene = new Scene(root,810,585);
             produits.setScene(scene);
             produits.show();
-            produits.setResizable(false);
+            produits.setResizable(true);
+    }
 
-        } catch (Exception e) {
-            System.out.println(" Error  : " + e);
+    
+    @FXML
+    private void addToCart(ActionEvent event) {
+        
+        ServicePanier sp = new ServicePanier();
+        
+        if (pdetails.getQuantite() < 0 || pdetails.getQuantite()==0 )
+        {
+             TrayNotification tray = new TrayNotification("Warning !", "Stock empty!", NotificationType.WARNING);
+                tray.showAndDismiss(Duration.seconds(3));
+        }
+        else
+        {
+            int quantiteRestante = pdetails.getQuantite() - quantiteD.getValue();
+            
+           sp.ajouter(new panier(pdetails.getId_user(),pdetails.getId(),quantiteD.getValue(),pdetails.getPrix(),LocalDateTime.now()));
+           ServiceProduit sprod = new ServiceProduit();
+             sprod.updateProductByQuantityAdded(quantiteRestante,pdetails.getId());
+             TrayNotification tray = new TrayNotification("Success !", "Product added to cart ", NotificationType.SUCCESS);
+             tray.showAndDismiss(Duration.seconds(3));
+             
         }
     }
-
-    @FXML
-    private void ModifierProduit (ActionEvent event)
-    {
-        
-    }
-   
-   /* private void ModifierProduit(ActionEvent event) {
-        
-         Produit.setId_pModifier(p.getIdProduit());
-        System.out.println("wsel lahné");
-        sendidproduit();
-             FXMLLoader loader = new FXMLLoader(getClass().getResource(("UpdateProduitFXML.fxml")));
-
-        loader.load();
-        AnchorPane parentContent = loader.getRoot();
-        window = (AnchorPane) photo.getParent().getParent();
-        UpdateProduitFXMLController cont = loader.getController();
-
-        window.getChildren().setAll(parentContent);
-
-    }*/
-
-    @FXML
-    private void supprimerProduit(ActionEvent event) {
-    }
-
-    @FXML
-    private void CommanderProduit(ActionEvent event) {
-    }
     
+    
+
+  
+
 }
