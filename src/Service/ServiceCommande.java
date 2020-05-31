@@ -22,9 +22,14 @@ import java.util.logging.Logger;
  * @author benha
  */
 public class ServiceCommande implements IService<commande>{
+    
+   
+    
     private Statement st;
       private ResultSet rs;
       Connection cnx = DataSource.getInstance().getConnection();
+      
+      
 
     public ServiceCommande() {
            DataSource cs= DataSource.getInstance();
@@ -38,9 +43,9 @@ public class ServiceCommande implements IService<commande>{
       
     public void ajouter(commande c) {
         try {
-            String requete = "INSERT INTO commande (Idproduit,Iduser,num_telephone,ville,adresse,instructions_livraison,prix_total)  VALUES (" 
-                    + c.getId_produit()+","+ c.getId_user()+",'" +c.getNum_telephone()+"','" +c.getVille() + "','" +c.getAdresse() +"','"
-                   +c.getInstructions_livraisons() +"'," +c.getPrix_total()+ ");";
+            String requete = "INSERT INTO orders (phonenumber,email,city,adresse,total,nom)  VALUES ('" 
+                    + c.getNum_telephone()+"','"+ c.getEmail()+"','" +c.getVille()+"','" +c.getAdresse() + "'," +c.getPrix_total() +",'"
+                   +c.getNom() + "');";
             Statement st = cnx.createStatement();
             st.executeUpdate(requete);
         System.out.println("Succés !");
@@ -52,7 +57,7 @@ public class ServiceCommande implements IService<commande>{
 
     public void supprimer(int id) {
      try {
-            String req="delete from commande where id_commande ="+id;
+            String req="delete from orders where id ="+id;
             Statement st = cnx.createStatement();
             st.executeUpdate(req);
             System.out.println("commande supprimée ! ");
@@ -64,17 +69,17 @@ public class ServiceCommande implements IService<commande>{
 
     public void modifier(commande c) {
           try {
-            String requete = "UPDATE commande SET Idproduit=?,Iduser=?,num_telephone=?,ville=?,adresse=?,instructions_livraison=?,prix_total=? WHERE id_commande=?";
+            String requete = "UPDATE orders SET phonenumber=?,email=?,city=?,adresse=?,total=?,nom=? WHERE id=?";
             
             PreparedStatement st = cnx.prepareStatement(requete);
-            st.setInt(1,c.getId_produit());
-            st.setInt(2,c.getId_user());
-            st.setString(3,c.getNum_telephone());
-            st.setString(4, c.getVille());
-            st.setString(5, c.getAdresse());
-            st.setString(6, c.getInstructions_livraisons());
-            st.setFloat(7,c.getPrix_total());
-            st.setInt(8,c.getId_commande());
+            st.setString(1,c.getNum_telephone());
+            st.setString(2,c.getEmail());
+            st.setString(3,c.getVille());
+            st.setString(4, c.getAdresse());
+            st.setInt(5, c.getPrix_total());
+            st.setString(6, c.getNom());
+            st.setInt(7,c.getId_commande());
+         
             st.executeUpdate(requete);
             System.out.println("commande modifiéé !");
 
@@ -88,12 +93,12 @@ public class ServiceCommande implements IService<commande>{
           List<commande> list = new ArrayList<>();
 
         try {
-            String requete = "SELECT * FROM commande;";
+            String requete = "SELECT * FROM orders;";
             PreparedStatement pst = cnx.prepareStatement(requete);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) 
             {
-          list.add(new commande(rs.getInt(1), rs.getInt(2),rs.getInt(3), rs.getString(4),  rs.getString(5),  rs.getString(6),  rs.getString(7),rs.getFloat(8)));
+          list.add(new commande(rs.getString("phonenumber"),rs.getString("ville"), rs.getString("adresse"),rs.getInt("total"), rs.getString("email"), rs.getString("nom")));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

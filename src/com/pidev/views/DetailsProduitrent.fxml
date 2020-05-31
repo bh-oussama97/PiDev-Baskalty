@@ -1,67 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleur.DetailsProduitRentController">
+<AnchorPane fx:id="details" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="608.0" style="-fx-background-color: #cbcbc3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DetailsProduitRentController">
    <children>
-      <AnchorPane fx:id="details" layoutX="-2.0" prefHeight="548.0" prefWidth="929.0" style="-fx-background-color: white;">
+      <ImageView fx:id="photo" fitHeight="204.0" fitWidth="204.0" layoutX="30.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXButton fx:id="commander" layoutX="421.0" layoutY="445.0" onAction="#CommanderProduit" prefHeight="33.0" prefWidth="114.0" ripplerFill="#cbcbc3" styleClass="supprimer" stylesheets="@../../../Style/buttonStyle.css" text="Rent" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="prixTotal" layoutX="498.0" layoutY="346.0" prefHeight="26.0" prefWidth="149.0" />
+      <GridPane layoutX="270.0" layoutY="36.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="221.0" prefWidth="301.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="165.0" minWidth="10.0" prefWidth="153.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="148.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="42.0" minHeight="2.0" prefHeight="41.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="55.0" minHeight="4.0" prefHeight="38.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <children>
-            <Label layoutX="470.0" layoutY="68.0" text="Nom :" />
-            <ImageView fx:id="photo" fitHeight="182.0" fitWidth="206.0" layoutX="207.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
-            <Label layoutX="470.0" layoutY="127.0" text="Catégorie :" />
-            <Label layoutX="470.0" layoutY="185.0" text="Quantié" />
-            <Label layoutX="470.0" layoutY="157.0" text="Prix:" />
-            <Label layoutX="243.0" layoutY="274.0" text="Description : " />
-            <Text fx:id="descriptionD" layoutX="243.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-            <Label fx:id="categorieD" layoutX="563.0" layoutY="128.0" text="Label" />
-            <Label fx:id="nomD" layoutX="563.0" layoutY="69.0" text="Label" />
-            <Label fx:id="quantiteD" layoutX="567.0" layoutY="186.0" text="Label" />
-            <Label fx:id="prixD" layoutX="565.0" layoutY="158.0" text="Label" />
-            <Label fx:id="idp1" layoutX="587.0" layoutY="40.0" text="idProduit" />
-            <Label layoutX="475.0" layoutY="40.0" text="Produit numéro :">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="470.0" layoutY="99.0" text="Réference :" />
-            <Spinner fx:id="quantitRes" layoutX="214.0" layoutY="347.0" />
-            <Label fx:id="referenceD" layoutX="86.0" layoutY="350.0" text="Quantite Total" />
-            <JFXButton fx:id="commander" layoutX="599.0" layoutY="389.0" onAction="#CommanderProduit" prefHeight="33.0" prefWidth="114.0" ripplerFill="#cbcbc3" style="-fx-background-color: #242424;" text="Commander" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="btnRMagasin" alignment="CENTER" contentDisplay="TOP" layoutX="217.0" layoutY="397.0" onAction="#RetourAumagasin" prefHeight="33.0" prefWidth="142.0" style="-fx-background-color: e3051a;" text="Retour Au magasin" textFill="WHITE" textOverrun="CLIP">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </JFXButton>
-            <JFXButton layoutX="366.0" layoutY="462.0" onAction="#ModifierProduit" prefHeight="33.0" prefWidth="97.0" ripplerFill="#cbcbc3" style="-fx-background-color: #242424;" text="Modifier" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </JFXButton>
-            <JFXButton alignment="CENTER" contentDisplay="TOP" layoutX="475.0" layoutY="462.0" onAction="#supprimerProduit" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: e3051a;" text="Supprimer" textFill="WHITE" textOverrun="CLIP">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </JFXButton>
-            <Label fx:id="prixTotal" layoutX="498.0" layoutY="346.0" prefHeight="26.0" prefWidth="149.0" />
-            <Label layoutX="376.0" layoutY="350.0" text="Prix Total">
-               <padding>
-                  <Insets left="50.0" />
-               </padding></Label>
-            <Spinner fx:id="rentDays" layoutX="455.0" layoutY="279.0" />
-            <Label layoutX="622.0" layoutY="283.0" text="RentDays">
-               <padding>
-                  <Insets left="50.0" />
-               </padding></Label>
+            <Label prefHeight="41.0" prefWidth="166.0" styleClass="labelBold" stylesheets="@../../../Style/labelStyle.css" text="Name :" />
+            <Label fx:id="nomD" prefHeight="41.0" prefWidth="206.0" styleClass="labelNormal" stylesheets="@../../../Style/labelStyle.css" text="Label" GridPane.columnIndex="1" />
+            <Label prefHeight="43.0" prefWidth="144.0" styleClass="labelBold" stylesheets="@../../../Style/labelStyle.css" text="Category :" GridPane.rowIndex="2" />
+            <Label fx:id="categorieD" prefHeight="44.0" prefWidth="210.0" styleClass="labelNormal" stylesheets="@../../../Style/labelStyle.css" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="prixD" prefHeight="38.0" prefWidth="209.0" styleClass="labelNormal" stylesheets="@../../../Style/labelStyle.css" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label prefHeight="42.0" prefWidth="160.0" styleClass="labelBold" stylesheets="@../../../Style/labelStyle.css" text="RentDays :" GridPane.rowIndex="3" />
+            <Spinner fx:id="rentDays" prefHeight="25.0" prefWidth="99.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label prefHeight="33.0" prefWidth="165.0" styleClass="labelBold" stylesheets="@../../../Style/labelStyle.css" text="Price :" GridPane.rowIndex="1" />
+            <Label prefHeight="38.0" prefWidth="224.0" styleClass="labelBold" stylesheets="@../../../Style/labelStyle.css" text="Remaining quantity :" GridPane.rowIndex="4" />
+            <Spinner fx:id="quantitRes" prefHeight="25.0" prefWidth="101.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
-      </AnchorPane>
+      </GridPane>
+      <ImageView fitHeight="25.0" fitWidth="22.0" layoutX="17.0" layoutY="14.0" onMouseClicked="#RetourAumagasin" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/arrow_left.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="44.0" layoutY="321.0" prefHeight="38.0" prefWidth="112.0" styleClass="labelBold" stylesheets="@../../../Style/labelStyle.css" text="Description : " />
+      <Label fx:id="descriptionD" layoutX="44.0" layoutY="359.0" prefHeight="75.0" prefWidth="482.0" styleClass="labelNormal" stylesheets="@../../../Style/labelStyle.css" text="Label" />
+      <Label layoutX="44.0" layoutY="273.0" prefHeight="38.0" prefWidth="112.0" styleClass="labelBold" stylesheets="@../../../Style/labelStyle.css" text="Total Price :" />
+      <Label fx:id="prixTotal" layoutX="139.0" layoutY="270.0" prefHeight="44.0" prefWidth="148.0" styleClass="labelNormal" stylesheets="@../../../Style/labelStyle.css" text="Label" />
    </children>
 </AnchorPane>

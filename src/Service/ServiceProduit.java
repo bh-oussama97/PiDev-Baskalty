@@ -17,6 +17,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.List;
 import java.sql.Timestamp;
+import static java.sql.Types.TIMESTAMP;
+import java.time.LocalDateTime;
 import java.util.stream.Collectors;
 /**
  *
@@ -44,8 +46,8 @@ public class ServiceProduit implements IService<produit>{
     
     public void ajouter(produit p) {
         try {
-            String requete = "INSERT INTO produit (quantite,date_ajout,nom,reference,"
-                    + "description,prix,image,categorie,iduser) VALUES"
+            String requete = "INSERT INTO product (quantite,date,name,reference,"
+                    + "description,price,image,category,iduser) VALUES"
                     + " (?,?,?,?,?,?,?,?,?);";
             PreparedStatement pst = cnx.prepareStatement(requete);
             pst.setInt(1,p.getQuantite());
@@ -54,12 +56,13 @@ public class ServiceProduit implements IService<produit>{
             pst.setString(3,p.getNom());
             pst.setString(4, p.getReference());
             pst.setString(5, p.getDescription());
-            pst.setFloat(6, p.getPrix());
+            pst.setInt(6, p.getPrix());
             pst.setString(7, p.getImage());
-            pst.setString(8,p.getCategorie());
-            pst.setInt(9,3);
+            pst.setInt(8,p.getCategorie());
+           // pst.setTimestamp(9, Timestamp.valueOf(""));
+           // pst.setNull(9,LocalDateTime.);
+            pst.setInt(9,27);
            
-            //pst.setDate(10,p.getDate_ajout());
             pst.executeUpdate();
             System.out.println("Produit ajouté !");
 
@@ -70,7 +73,7 @@ public class ServiceProduit implements IService<produit>{
     
         
     public void supprimer (int id) {
-         String req="delete from produit where id_prod="+id;
+         String req="delete from product where id="+id;
         try {
             st.executeUpdate(req);
             System.out.println("produit bien supprimé ! ");
@@ -80,15 +83,30 @@ public class ServiceProduit implements IService<produit>{
     }
     
     
+    public void updateProductByQuantityAdded( int quant,int idd_prod)
+    {
+        try
+        {
+            String request = "update product set quantite="+quant+" where id="+idd_prod+";" ;
+           
+            st.executeUpdate(request);
+           System.out.println("quantity of product " +idd_prod +"has been updated successfully ");
+        }
+        catch(SQLException ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+    }
+    
     
       public void modifier(produit p) {
         try {
-            String requete = "UPDATE produit SET quantite='" + 
-                    p.getQuantite() + "',nom='"+p.getNom()
+            String requete = "UPDATE product SET quantite='" + 
+                    p.getQuantite() + "',name='"+p.getNom()
                     + "',reference='"+p.getReference() + "',description='"+p.getDescription()
-                    +"',prix='"+p.getPrix() +"',image='"+p.getImage() +"',modifiee_le='"+ p.getModifie_le()
-                    +"',categorie='"+p.getCategorie() + "',iduser=3"
-                    + " WHERE id_prod=" + p.getId();
+                    +"',price='"+p.getPrix() +"',image='"+p.getImage() +"',updated_at='"+ p.getModifie_le()
+                    +"',category='"+p.getCategorie()+"'"
+                    + " WHERE id=" + p.getId();
             Statement st = cnx.createStatement();
             st.executeUpdate(requete);
             System.out.println("produit modifié !");
@@ -99,30 +117,30 @@ public class ServiceProduit implements IService<produit>{
     }
    
     
-    public List<produit> afficher()
+    public ArrayList<produit> afficher()
     {
-        List<produit> list = new ArrayList<>();
+        ArrayList<produit> list = new ArrayList<>();
 
         try {
-            String requete = "SELECT * FROM produit;";
+            String requete = "SELECT * FROM product;";
             PreparedStatement pst = cnx.prepareStatement(requete);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) 
             {
                   produit p = new produit();
-                  p.setId(rs.getInt("id_prod"));
+                  p.setId(rs.getInt("id"));
                   p.setQuantite(rs.getInt("quantite"));
-                  Timestamp date = rs.getTimestamp("date_ajout");
+                  Timestamp date = rs.getTimestamp("date");
                   p.setDate_ajout(date.toLocalDateTime());
-                  p.setNom(rs.getString("nom"));
+                  p.setNom(rs.getString("name"));
                   p.setReference(rs.getString("reference"));
                   p.setDescription( rs.getString("description"));
-                  p.setPrix(rs.getFloat("prix"));
+                  p.setPrix(rs.getInt("price"));
                   p.setImage(rs.getString("image"));
                  // Timestamp date_modif = rs.getTimestamp("modifiee_le");
                   //p.setModifie_le(date_modif.toLocalDateTime());
                   p.setId_user(rs.getInt("iduser"));
-                  p.setCategorie(rs.getString("categorie"));
+                  p.setCategorie(rs.getInt("category"));
                   list.add(p);
             }
         } catch (SQLException ex) 
@@ -138,17 +156,17 @@ public class ServiceProduit implements IService<produit>{
         List<produit> list = new ArrayList<>();
 
         try {
-            String requete = "SELECT nom,prix,image,quantite,categorie FROM produit order by date_ajout desc ;";
+            String requete = "SELECT name,price,image,quantite,category FROM product order by date desc ;";
             PreparedStatement pst = cnx.prepareStatement(requete);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) 
             {
                   produit p = new produit();
                   p.setQuantite(rs.getInt("quantite"));
-                  p.setNom(rs.getString("nom"));
-                  p.setPrix(rs.getFloat("prix"));
+                  p.setNom(rs.getString("name"));
+                  p.setPrix(rs.getInt("price"));
                   p.setImage(rs.getString("image"));
-                  p.setCategorie(rs.getString("categorie"));
+                  p.setCategorie(rs.getInt("category"));
                   list.add(p);
             }
         } catch (SQLException ex) 
@@ -165,7 +183,7 @@ public class ServiceProduit implements IService<produit>{
     //affichage par id 
     
    public produit afficherParId(int id) {
-        String req="select * from produit where id_prod="+id;
+        String req="select * from product where id="+id;
         produit p =new produit();
         try {
             rs = st.executeQuery(req);
@@ -175,15 +193,15 @@ public class ServiceProduit implements IService<produit>{
                   p.setQuantite(rs.getInt("quantite"));
                   //Timestamp date = rs.getTimestamp("date_ajout");
                  // p.setDate_ajout(date.toLocalDateTime());
-                  p.setNom(rs.getString("nom"));
+                  p.setNom(rs.getString("name"));
                   p.setReference(rs.getString("reference"));
                   p.setDescription( rs.getString("description"));
-                  p.setPrix(rs.getFloat("prix"));
+                  p.setPrix(rs.getInt("price"));
                   p.setImage(rs.getString("image"));
                  // Timestamp date_modif = rs.getTimestamp("modifiee_le");
                   //p.setModifie_le(date_modif.toLocalDateTime());
                 //  p.setId_user(rs.getInt("iduser"));
-                  p.setCategorie(rs.getString("categorie"));
+                  p.setCategorie(rs.getInt("category"));
       
             }
            
@@ -198,7 +216,7 @@ public class ServiceProduit implements IService<produit>{
    public List<produit> RechercherProduitParNom (String nom) {
         List<produit> lp = new ArrayList<>();
         try {
-            String select = "SELECT  * FROM produit where nom like '%"+nom+"%' ;";
+            String select = "SELECT  * FROM product where name like '%"+nom+"%' ;";
 
             Statement statement1 = cnx.createStatement();
 
@@ -214,18 +232,18 @@ public class ServiceProduit implements IService<produit>{
                 { produit p = new produit();
                 
                 p.setQuantite(result.getInt("quantite"));
-                 Timestamp date = result.getTimestamp("date_ajout");
+                 Timestamp date = result.getTimestamp("date");
                   p.setDate_ajout(date.toLocalDateTime());
-                p.setId(result.getInt("id_prod"));
-                p.setNom(result.getString("nom"));
+                p.setId(result.getInt("id"));
+                p.setNom(result.getString("name"));
                 p.setReference(result.getString("reference"));
                 p.setDescription(result.getString("description"));
                 p.setImage(result.getString("image"));
-                 Timestamp date_modif = result.getTimestamp("modifiee_le");
+                 Timestamp date_modif = result.getTimestamp("updated_at");
 //                  p.setModifie_le(date_modif.toLocalDateTime());
-                p.setCategorie(result.getString("categorie"));
+                p.setCategorie(result.getInt("category"));
                 p.setId_user(result.getInt("iduser"));
-                p.setPrix(result.getFloat("prix"));
+                p.setPrix(result.getInt("price"));
                 lp.add(p); 
                 } while (result.next());   
             }          
@@ -240,8 +258,8 @@ public class ServiceProduit implements IService<produit>{
     }
    
   
-    public List<produit> FiltrerProduitsParOrdreCroissant(int prixmax) {
-        List<produit> list = new ArrayList<>();
+    public ArrayList<produit> FiltrerProduitsParOrdreCroissant(int prixmax) {
+        ArrayList<produit> list = new ArrayList<>();
         ServiceProduit sp = new ServiceProduit()    ;
         list = sp.afficher();
      
@@ -304,7 +322,7 @@ public class ServiceProduit implements IService<produit>{
         List<produit> produits = new ArrayList<>();
         produit produit = new produit();
         try {
-            String sql = "SELECT * FROM produit order by prix desc";
+            String sql = "SELECT * FROM product order by price desc";
             PreparedStatement statement = this.cnx.prepareStatement(sql);
             //statement.setString(1,filtre);
             ResultSet results = statement.executeQuery();
@@ -312,18 +330,18 @@ public class ServiceProduit implements IService<produit>{
             {
                 produit p = new produit();
                 p.setQuantite(results.getInt("quantite"));
-                  Timestamp date = results.getTimestamp("date_ajout");
+                  Timestamp date = results.getTimestamp("date");
                   p.setDate_ajout(date.toLocalDateTime());
-                p.setId(results.getInt("id_prod"));
-                p.setNom(results.getString("nom"));
+                p.setId(results.getInt("id"));
+                p.setNom(results.getString("name"));
                 p.setReference(results.getString("reference"));
                 p.setDescription(results.getString("description"));
                 p.setImage(results.getString("image"));
-                Timestamp date_modif = results.getTimestamp("modifiee_le");
+                Timestamp date_modif = results.getTimestamp("updated_at");
                   p.setModifie_le(date_modif.toLocalDateTime());
-                p.setCategorie(results.getString("categorie"));
+                p.setCategorie(results.getInt("category"));
                 p.setId_user(results.getInt("iduser"));
-                p.setPrix(results.getFloat("prix"));     
+                p.setPrix(results.getInt("price"));     
                 produits.add(p);
            
             }
@@ -334,11 +352,11 @@ public class ServiceProduit implements IService<produit>{
         return produits;
     }
     
-      public List<produit> RechercherProduitParCategorie (String categorie) {
-        List<produit> produits = new ArrayList<>();
+      public ArrayList<produit> RechercherProduitParCategorie (int categorie) {
+        ArrayList<produit> produits = new ArrayList<>();
         produit produit = new produit();
         try {
-            String sql = "SELECT * FROM produit where categorie like '%"+categorie +"%';" ;
+            String sql = "SELECT * FROM product where product.category="+categorie ;
             PreparedStatement statement = this.cnx.prepareStatement(sql);
             ResultSet results = statement.executeQuery();
             
@@ -352,18 +370,18 @@ public class ServiceProduit implements IService<produit>{
             {
                 produit p = new produit();
                 p.setQuantite(results.getInt("quantite"));
-                 Timestamp date = results.getTimestamp("date_ajout");
+                 Timestamp date = results.getTimestamp("date");
                   p.setDate_ajout(date.toLocalDateTime());
-                p.setId(results.getInt("id_prod"));
-                p.setNom(results.getString("nom"));
+                p.setId(results.getInt("id"));
+                p.setNom(results.getString("name"));
                 p.setReference(results.getString("reference"));
                 p.setDescription(results.getString("description"));
                 p.setImage(results.getString("image"));
-            Timestamp date_modif = results.getTimestamp("modifiee_le");
+            Timestamp date_modif = results.getTimestamp("updated_at");
                   //p.setModifie_le(date_modif.toLocalDateTime());
-                p.setCategorie(results.getString("categorie"));
+                p.setCategorie(results.getInt("category"));
                 p.setId_user(results.getInt("iduser"));
-                p.setPrix(results.getFloat("prix"));     
+                p.setPrix(results.getInt("price"));     
                 produits.add(p);
             }  while (results.next()) ;
     

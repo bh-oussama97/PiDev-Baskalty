@@ -149,7 +149,9 @@ public class EvenementService {
             ResultSet res = ste.executeQuery("select * from events");
             events com = null;
             while (res.next()) {
-            com = new events(res.getInt(1),res.getInt(3),res.getString(7), res.getString(9), res.getString(8), res.getDate(10), res.getDate(12), res.getInt(13), res.getInt(14),res.getString(11));
+            com = new events(res.getInt(1),res.getInt(2),res.getString(6), res.getString(8), res.getString(7), res.getDate(9), res.getDate(11), res.getInt(12), res.getInt(13),res.getString(10));
+             // public events(int Id_Event,int Id_User, String Titre, String Contenu, String location, Date start, Date end, int prix, int quantity,String image) {
+
             vector.add(com);
             
             

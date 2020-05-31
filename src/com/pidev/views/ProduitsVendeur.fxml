@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="holderPane" prefHeight="515.0" prefWidth="610.0" style="-fx-background-color: #CACACA;" stylesheets="@../../../Font/font.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleur.ProduitsVendeurController">
+<AnchorPane fx:id="holderPane" prefHeight="515.0" prefWidth="610.0" style="-fx-background-color: #CACACA;" stylesheets="@../../../Font/font.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ProduitsVendeurController">
    <children>
       <VBox layoutX="15.0" layoutY="12.0" prefHeight="439.0" prefWidth="577.0">
          <children>
@@ -34,10 +34,10 @@
                     </rowConstraints>
                      <children>
                         <Label fx:id="quantite1" prefHeight="28.0" prefWidth="143.0" style="-fx-font-family: Barlow Regular;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Quantité  Disponible :" wrappingWidth="142.9999924302101" GridPane.rowIndex="3" />
-                        <Label prefHeight="17.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Nom" />
-                        <Label prefHeight="17.0" prefWidth="66.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Catégorie :" GridPane.rowIndex="1" />
-                        <Label prefHeight="17.0" prefWidth="76.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Prix" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Quantity Available :" wrappingWidth="142.9999924302101" GridPane.rowIndex="3" />
+                        <Label prefHeight="17.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Name" />
+                        <Label prefHeight="17.0" prefWidth="66.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Category :" GridPane.rowIndex="1" />
+                        <Label prefHeight="17.0" prefWidth="76.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Price :" GridPane.rowIndex="2" />
                         <Label fx:id="nom1" prefHeight="27.0" prefWidth="140.0" style="-fx-font-family: Barlow Regular;" text="Label" GridPane.columnIndex="1" />
                         <Label fx:id="categorie1" prefHeight="26.0" prefWidth="145.0" style="-fx-font-family: Barlow Regular;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label fx:id="prix1" prefHeight="25.0" prefWidth="148.0" style="-fx-font-family: Barlow Regular;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
@@ -64,10 +64,10 @@
                      </rowConstraints>
                      <children>
                         <Label fx:id="quantite2" prefHeight="37.0" prefWidth="148.0" style="-fx-font-family: Barlow Regular;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Quantité  Disponible :" wrappingWidth="142.9999924302101" GridPane.rowIndex="3" />
-                        <Label prefHeight="17.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Nom" />
-                        <Label prefHeight="17.0" prefWidth="66.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Catégorie :" GridPane.rowIndex="1" />
-                        <Label prefHeight="17.0" prefWidth="76.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Prix" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Quantity Available :" wrappingWidth="142.9999924302101" GridPane.rowIndex="3" />
+                        <Label prefHeight="17.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Name" />
+                        <Label prefHeight="17.0" prefWidth="66.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Category :" GridPane.rowIndex="1" />
+                        <Label prefHeight="17.0" prefWidth="76.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Price :" GridPane.rowIndex="2" />
                         <Label fx:id="nom2" prefHeight="34.0" prefWidth="151.0" style="-fx-font-family: Barlow Regular;" text="Label" GridPane.columnIndex="1" />
                         <Label fx:id="categorie2" prefHeight="35.0" prefWidth="150.0" style="-fx-font-family: Barlow Regular;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label fx:id="prix2" prefHeight="36.0" prefWidth="150.0" style="-fx-font-family: Barlow Regular;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
@@ -94,10 +94,10 @@
                      </rowConstraints>
                      <children>
                         <Label fx:id="quantite3" prefHeight="35.0" prefWidth="151.0" style="-fx-font-family: Barlow Regular;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Quantité  Disponible :" wrappingWidth="142.9999924302101" GridPane.rowIndex="3" />
-                        <Label prefHeight="17.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Nom" />
-                        <Label prefHeight="17.0" prefWidth="66.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Catégorie :" GridPane.rowIndex="1" />
-                        <Label prefHeight="17.0" prefWidth="76.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Prix" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Quantity Available :" wrappingWidth="142.9999924302101" GridPane.rowIndex="3" />
+                        <Label prefHeight="17.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Name" />
+                        <Label prefHeight="17.0" prefWidth="66.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Category :" GridPane.rowIndex="1" />
+                        <Label prefHeight="17.0" prefWidth="76.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold;" text="Price :" GridPane.rowIndex="2" />
                         <Label fx:id="nom3" prefHeight="27.0" prefWidth="148.0" style="-fx-font-family: Barlow Regular;" text="Label" GridPane.columnIndex="1" />
                         <Label fx:id="categorie3" style="-fx-font-family: Barlow Regular;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label fx:id="prix3" prefHeight="26.0" prefWidth="146.0" style="-fx-font-family: Barlow Regular;" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />

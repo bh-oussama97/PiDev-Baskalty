@@ -29,7 +29,7 @@ public class ServiceCategorie implements IService<categorie>
     }
     public void ajouter(categorie c) {
         try {
-            String requete = "INSERT INTO categorie (nom)  VALUES ('" + c.getNom() + "');";
+            String requete = "INSERT INTO category (nom)  VALUES ('" + c.getNom() + "');";
             Statement st = cnx.createStatement();
             st.executeUpdate(requete);
         System.out.println("catégorie ajoutée !");
@@ -39,11 +39,48 @@ public class ServiceCategorie implements IService<categorie>
         }
     }
     
+       public int getCategorieIdByNom(String nom) throws SQLException
+    {
+        int val=0;
+        
+        String requete = "select id from category where nom='"+nom+"';";
+     
+            PreparedStatement pst = cnx.prepareStatement(requete);
+           rs = pst.executeQuery();
+           
+           while (rs.next())
+           {
+               val =  rs.getInt("id");
+           }
+                   
+           
+           return val;
+    }
+    
+       
+         public String getCategorieNameById (int id) throws SQLException
+    {
+        String name_cat ="";
+        String requete = "select nom from category where id="+id;
+     
+            PreparedStatement pst = cnx.prepareStatement(requete);
+           rs = pst.executeQuery();
+           
+           while (rs.next())
+           {
+              name_cat =  rs.getString("nom");
+           }
+                   
+           
+           return name_cat;
+    }
+       
+       
     
      public void modifier(categorie c ) {
         try {
-            String requete = "UPDATE categorie SET nom ='" + 
-                    c.getNom() + " ' where id_cat= " + c.getId_categorie();
+            String requete = "UPDATE category SET nom ='" + 
+                    c.getNom() + " ' where id= " + c.getId_categorie();
             Statement st = cnx.createStatement();
             st.executeUpdate(requete);
             System.out.println("catégorie modifiée !");
@@ -55,7 +92,7 @@ public class ServiceCategorie implements IService<categorie>
     public void supprimer (int id) {
          
         try {
-            String req="delete from categorie where id_cat="+id;
+            String req="delete from category where id="+id;
             Statement st = cnx.createStatement();
             st.executeUpdate(req);
             System.out.println("catégorie bien supprimée ! ");
@@ -69,12 +106,12 @@ public class ServiceCategorie implements IService<categorie>
         List<categorie> list = new ArrayList<>();
 
         try {
-            String requete = "SELECT * FROM categorie;";
+            String requete = "SELECT * FROM category;";
             PreparedStatement pst = cnx.prepareStatement(requete);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) 
             {
-           list.add(new categorie(rs.getInt("id_cat"),rs.getString("nom")));
+           list.add(new categorie(rs.getInt("id"),rs.getString("nom")));
             }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
@@ -86,7 +123,7 @@ public class ServiceCategorie implements IService<categorie>
    
     public categorie afficherParId(int id) 
     {
-        String req="select * from categorie where id_cat="+id;
+        String req="select * from category where id="+id;
         categorie c = new categorie();
         try {
          
@@ -94,7 +131,7 @@ public class ServiceCategorie implements IService<categorie>
             
           while(rs.next())
           {
-            c = new categorie(rs.getInt("id_cat"),rs.getString("nom"));
+            c = new categorie(rs.getInt("id"),rs.getString("nom"));
               System.out.println(c.toString());
         } 
         }

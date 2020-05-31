@@ -105,8 +105,8 @@ public class ServiceRentProd implements IService<RentProd> {
         return maxId;
     }
 
-    public List<RentProd> afficher() {
-        List<RentProd> list = new ArrayList<>();
+    public ArrayList<RentProd> afficher() {
+        ArrayList<RentProd> list = new ArrayList<>();
 
         try {
             String requete = "SELECT * FROM rentprod;";
@@ -125,6 +125,7 @@ public class ServiceRentProd implements IService<RentProd> {
                 p.setDispo(rs.getInt("dispo") == 1);
                 p.setDescription(rs.getString("Description"));
                 p.setImage(rs.getString("image"));
+                p.setStars(rs.getDouble("stars"));
                 list.add(p);
             }
         } catch (SQLException ex) {
@@ -133,7 +134,7 @@ public class ServiceRentProd implements IService<RentProd> {
         return list;
     }
 
-    public void noter(int stars, int idRentProd) {
+    public void noter(Double stars, int idRentProd) {
         try {
             String requete = "UPDATE rentProd SET stars="+stars + " WHERE id=" + idRentProd;
             Statement st = cnx.createStatement();

@@ -18,14 +18,18 @@ import javafx.stage.Stage;
  * @author dell is hell
  */
 public class MainFX extends Application {
-    public static User user = new User(2, "yahya", "123456789");
+    public static User user = new User(28, "yahya", "123456789");
     @Override
     public void start(Stage primaryStage) throws IOException {
-Parent root = FXMLLoader.load(getClass().getResource("/FXML/AcceuilForum.fxml"));
+      Parent root = FXMLLoader.load(getClass().getResource("/com/pidev/views/PageAccueilProduitsrent.fxml"));
         Scene scene = new Scene(root);
-        primaryStage.setTitle("Login");
+        
+        primaryStage.setTitle("Baskalty");
+         
+
         primaryStage.setScene(scene);
         primaryStage.show();
+       primaryStage.setResizable(true);
     }
 
     /**

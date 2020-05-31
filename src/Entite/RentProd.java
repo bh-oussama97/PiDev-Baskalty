@@ -25,7 +25,8 @@ public class RentProd {
 	}
 	public RentProd(int rentProd_id, int user, String model, int quantity, String marke, String localisation,
 					String reference, double price, int rentdays, Boolean dispo, String description, String image, double stars,
-					int renter) {
+					int renter) 
+        {
 		super();
 		this.rentProd_id = rentProd_id;
 		this.user = user;

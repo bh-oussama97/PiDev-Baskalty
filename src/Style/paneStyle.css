@@ -1,0 +1,26 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23 avr. 2020, 02:51:56
+    Author     : benha
+*/
+
+.paneborder
+{
+    -fx-padding: 10;
+    -fx-border-style: solid inside;
+    -fx-border-width: 2;
+    -fx-border-insets: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: blue;
+}
+
+.paneborderinside
+{
+    -fx-border-color : #242424;
+     -fx-border-style: solid ;
+     
+}

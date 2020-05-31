@@ -19,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="baskaltyanchorpane" prefHeight="583.0" prefWidth="810.0" stylesheets="@../../../Font/font.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleur.PageAccueilProduitsController">
+<AnchorPane id="AnchorPane" fx:id="baskaltyanchorpane" prefHeight="583.0" prefWidth="810.0" stylesheets="@../../../Font/font.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PageAccueilProduitsController">
    <children>
       <Pane prefHeight="589.0" prefWidth="202.0" style="-fx-background-color: #242424;">
          <children>
@@ -32,8 +32,8 @@
             <AnchorPane layoutY="169.0" prefHeight="121.0" prefWidth="209.0">
                <children>
                   <Line endX="71.0" endY="-31.0" layoutX="16.0" layoutY="154.0" startX="-16.0" startY="-31.0" stroke="#cbcbc3" />
-                  <ComboBox fx:id="cat" layoutX="27.0" layoutY="21.0" prefHeight="25.0" prefWidth="156.0" promptText="Choisir une catégorie" style="-fx-font-family: Barlow Regular;" stylesheets="@../../../Font/font.css" />
-                  <Label fx:id="prixmaxlabel" layoutX="91.0" layoutY="58.0" style="-fx-font-family: Barlow Regular;" stylesheets="@../../../Font/font.css" text="Prix" textFill="#cbcbc3">
+                  <ComboBox fx:id="cat" layoutX="27.0" layoutY="21.0" prefHeight="25.0" prefWidth="156.0" promptText="Choose a category" style="-fx-font-family: Barlow Regular;" stylesheets="@../../../Font/font.css" />
+                  <Label fx:id="prixmaxlabel" layoutX="91.0" layoutY="58.0" style="-fx-font-family: Barlow Regular;" stylesheets="@../../../Font/font.css" text="price" textFill="#cbcbc3">
                      <font>
                         <Font name="Century Gothic" size="12.0" />
                      </font>
@@ -48,7 +48,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="magasin" alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="56.0" onAction="#ListeProduits" prefHeight="40.0" prefWidth="202.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 16;" styleClass="buttonDashboard" text="MAGASIN" textFill="#cbcbcb">
+                  <JFXButton fx:id="magasin" alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="56.0" onAction="#ListeProduits" prefHeight="40.0" prefWidth="202.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 16;" styleClass="buttonDashboard" text="SHOP" textFill="#cbcbcb">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -60,7 +60,7 @@
                         <URL value="@../../../Style/buttonStyle.css" />
                      </stylesheets>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="105.0" onAction="#monpanier" prefHeight="40.0" prefWidth="202.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 16;" styleClass="buttonDashboard" text="MON PANIER" textFill="#cbcbcb">
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="105.0" onAction="#monpanier" prefHeight="40.0" prefWidth="202.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 16;" styleClass="buttonDashboard" text="       SHOPPING CART" textFill="#cbcbcb">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -72,7 +72,7 @@
                         <URL value="@../../../Style/buttonStyle.css" />
                      </stylesheets>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="154.0" onAction="#Commander" prefHeight="40.0" prefWidth="202.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 16;" styleClass="buttonDashboard" text="  COMMANDER" textFill="#cbcbcb">
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="-4.0" layoutY="154.0" onAction="#Commander" prefHeight="40.0" prefWidth="202.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 16;" styleClass="buttonDashboard" text="ORDER" textFill="#cbcbcb">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -102,7 +102,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <JFXButton layoutX="19.0" layoutY="525.0" prefHeight="33.0" prefWidth="158.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 16; -fx-border-color: #FFFF;" styleClass="buttonDashboard" text="CONTACTEZ NOUS" textFill="#cbcbcb">
+            <JFXButton alignment="CENTER" layoutX="19.0" layoutY="525.0" onAction="#contactus" prefHeight="33.0" prefWidth="158.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 16; -fx-border-color: #FFFF; -fx-font-weight: bold;" styleClass="buttonDashboard" text="CONTACT US" textFill="#cbcbcb">
                <font>
                   <Font size="13.0" />
                </font>
@@ -114,7 +114,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <Label layoutX="14.0" layoutY="127.0" prefHeight="30.0" prefWidth="128.0" style="-fx-font-family: Barlow Regular;" stylesheets="@../../../Font/font.css" text="Filtrer par : " textFill="#cbcbc3">
+            <Label layoutX="14.0" layoutY="127.0" prefHeight="30.0" prefWidth="128.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 16;" stylesheets="@../../../Font/font.css" text="Filter By :" textFill="#cbcbc3">
                <font>
                   <Font name="Century Gothic" size="20.0" />
                </font>
@@ -130,10 +130,10 @@
                </opaqueInsets>
                <children>
                   <ImageView fx:id="image1" fitHeight="119.0" fitWidth="107.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="115.0" layoutY="14.0" prefHeight="17.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" stylesheets="@../../../Font/font.css" text="Nom" />
-                  <Label layoutX="113.0" layoutY="44.0" prefHeight="17.0" prefWidth="66.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" stylesheets="@../../../Font/font.css" text="Categorie :" />
-                  <Text layoutX="111.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" text="Prix : " wrappingWidth="59.306640625" />
-                  <Button layoutX="208.0" layoutY="103.0" mnemonicParsing="false" onAction="#details0" style="-fx-font-family: Barlow Regular;" stylesheets="@../../../Font/font.css" text="Details">
+                  <Label layoutX="115.0" layoutY="14.0" prefHeight="17.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" stylesheets="@../../../Font/font.css" text="Name" />
+                  <Label layoutX="113.0" layoutY="44.0" prefHeight="17.0" prefWidth="66.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" stylesheets="@../../../Font/font.css" text="Category :" />
+                  <Text layoutX="111.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" text="Price :" wrappingWidth="59.306640625" />
+                  <Button layoutX="208.0" layoutY="103.0" mnemonicParsing="false" onAction="#details0" style="-fx-font-family: Barlow Regular;" stylesheets="@../../../Style/buttonStyle.css" text="Details">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
@@ -150,10 +150,10 @@
                </opaqueInsets>
                <children>
                   <ImageView fx:id="image2" fitHeight="109.0" fitWidth="107.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="115.0" layoutY="14.0" prefHeight="17.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" stylesheets="@../../../Font/font.css" text="Nom" textFill="#141414" />
-                  <Label layoutX="113.0" layoutY="44.0" prefHeight="17.0" prefWidth="66.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" text="Categorie :" />
-                  <Text layoutX="111.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" text="Prix : " wrappingWidth="59.306640625" />
-                  <Button layoutX="208.0" layoutY="103.0" mnemonicParsing="false" onAction="#details1" style="-fx-font-family: Barlow Regular;" text="Details">
+                  <Label layoutX="115.0" layoutY="14.0" prefHeight="17.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" stylesheets="@../../../Font/font.css" text="Name" textFill="#141414" />
+                  <Label layoutX="113.0" layoutY="44.0" prefHeight="17.0" prefWidth="66.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" text="Category :" />
+                  <Text layoutX="111.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" text="Price :" wrappingWidth="59.306640625" />
+                  <Button layoutX="208.0" layoutY="103.0" mnemonicParsing="false" onAction="#details1" style="-fx-font-family: Barlow Regular;" stylesheets="@../../../Style/buttonStyle.css" text="Details">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
@@ -170,10 +170,10 @@
                </opaqueInsets>
                <children>
                   <ImageView fx:id="image3" fitHeight="102.0" fitWidth="97.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="115.0" layoutY="14.0" prefHeight="17.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" text="Nom" />
-                  <Label layoutX="113.0" layoutY="44.0" prefHeight="17.0" prefWidth="66.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" text="Categorie :" />
-                  <Text layoutX="111.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" text="Prix : " wrappingWidth="59.306640625" />
-                  <Button layoutX="208.0" layoutY="103.0" mnemonicParsing="false" onAction="#details3" style="-fx-font-family: Barlow Regular;" text="Details">
+                  <Label layoutX="115.0" layoutY="14.0" prefHeight="17.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" text="Name" />
+                  <Label layoutX="113.0" layoutY="44.0" prefHeight="17.0" prefWidth="66.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" text="Category :" />
+                  <Text layoutX="111.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" text="Price :" wrappingWidth="59.306640625" />
+                  <Button layoutX="208.0" layoutY="103.0" mnemonicParsing="false" onAction="#details3" style="-fx-font-family: Barlow Regular;" stylesheets="@../../../Style/buttonStyle.css" text="Details">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
@@ -190,10 +190,10 @@
                </opaqueInsets>
                <children>
                   <ImageView fx:id="image4" fitHeight="120.0" fitWidth="119.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="129.0" layoutY="23.0" prefHeight="17.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" text="Nom" />
-                  <Label layoutX="127.0" layoutY="53.0" prefHeight="17.0" prefWidth="66.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" text="Categorie :" />
-                  <Text layoutX="125.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" text="Prix : " wrappingWidth="59.306640625" />
-                  <Button layoutX="222.0" layoutY="112.0" mnemonicParsing="false" onAction="#details14" style="-fx-font-family: Barlow Regular;" text="Details">
+                  <Label layoutX="129.0" layoutY="23.0" prefHeight="17.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" text="Name" />
+                  <Label layoutX="127.0" layoutY="53.0" prefHeight="17.0" prefWidth="66.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" text="Category :" />
+                  <Text layoutX="125.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: bold; -fx-font-color: #000000;" text="Price :" wrappingWidth="59.306640625" />
+                  <Button layoutX="222.0" layoutY="112.0" mnemonicParsing="false" onAction="#details14" style="-fx-font-family: Barlow Regular;" stylesheets="@../../../Style/buttonStyle.css" text="Details">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
@@ -213,14 +213,17 @@
                <image>
                   <Image url="@../../../images/log-out.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <ImageView fx:id="user" fitHeight="56.0" fitWidth="26.0" layoutX="519.0" layoutY="26.0" onMouseClicked="#modiferuser" pickOnBounds="true" preserveRatio="true" style="-fx-backgorund-color: white;">
                <image>
                   <Image url="@../../../images/Person-Male-Light-icon.png" />
                </image>
             </ImageView>
-            <Label fx:id="bienvenue" contentDisplay="CENTER" layoutX="234.0" layoutY="20.0" prefHeight="40.0" prefWidth="271.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 25;" stylesheets="@../../../Font/font.css" text="Bienvenue" textFill="#cbcbc3" />
-            <JFXTextField fx:id="search" focusColor="WHITE" layoutX="19.0" layoutY="25.0" onAction="#recherche" prefHeight="29.0" prefWidth="178.0" promptText="Tapez le nom" style="-fx-font-family: Barlow Regular; -fx-prompt-text-fill: #cbcbc3;" stylesheets="@../../../Font/font.css" unFocusColor="WHITE">
+            <Label fx:id="bienvenue" contentDisplay="CENTER" layoutX="234.0" layoutY="20.0" prefHeight="40.0" prefWidth="271.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 25;" stylesheets="@../../../Font/font.css" text="Welcome" textFill="#cbcbc3" />
+            <JFXTextField fx:id="search" focusColor="WHITE" layoutX="19.0" layoutY="25.0" onAction="#recherche" prefHeight="29.0" prefWidth="178.0" promptText="Type a name" style="-fx-font-family: Barlow Regular; -fx-prompt-text-fill: #cbcbc3;" stylesheets="@../../../Font/font.css" unFocusColor="WHITE">
                <font>
                   <Font name="Century Gothic" size="15.0" />
                </font>

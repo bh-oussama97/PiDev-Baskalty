@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 public class panier {
     
     private int id_panier;
+    private int total;
 
     public String getName() {
         return name;
@@ -55,6 +56,11 @@ public class panier {
         this.date_ajout = date_ajout;
     }
 
+    public int getTotal(int prix,int quantite) {
+   return prix * quantite;
+    }
+
+   
     public panier(int id_panier, int user_id, int produit_id, int quantite, int prix) {
         this.id_panier = id_panier;
         this.user_id = user_id;
@@ -68,7 +74,7 @@ public class panier {
         this.produit_id = produit_id;
         this.quantite = quantite;
         this.prix = prix;
-    }
+    }   
 
     public panier() 
     {
@@ -84,9 +90,10 @@ public class panier {
 
     @Override
     public String toString() {
-        return "panier{" + "id_panier=" + id_panier + ", user_id=" + user_id + ", produit_id=" + produit_id + ", quantite=" + quantite + ", prix=" + prix + ", date_ajout=" + date_ajout + '}';
+        return "panier{" + "id_panier=" + id_panier + ", user_id=" + user_id + ", produit_id=" + produit_id + ", quantite=" + quantite + ", prix=" + prix + ", date_ajout=" + date_ajout + ", name=" + name + ", image=" + image + '}';
     }
-    
+
+
     
 
     public int getId_panier() {
@@ -138,6 +145,6 @@ public class panier {
     }
     
     
-
+   
    
 }

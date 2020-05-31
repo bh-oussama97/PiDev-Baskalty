@@ -44,6 +44,25 @@ and open the template in the editor.
   
 }
 
+.confirmpayment
+{
+    -fx-background-color :  #E3051A;
+    -fx-text-fill : #fff ;
+    -fx-background-radius: 5;
+    -fx-font-family : 'Barlow Bold';
+    -fx-font-size : 16;
+  
+}
+
+.modifier:hover{
+    -fx-effect: dropshadow(three-pass-box,#E3051A,39.295,0,0,0);
+    -fx-text-fill : #fff ;
+    -fx-background-radius: 5;
+ 
+    -fx-font-family : 'Barlow Regular';
+    -fx-font-size : 16 ;
+}
+
 .supprimer
 {
    /* -fx-effect: dropshadow(one-pass-box, rgba(214,214,214,0.3), 30, 1.0, 0, 0);*/
@@ -52,4 +71,32 @@ and open the template in the editor.
     -fx-background-color :  #343434;
     -fx-font-family : 'Barlow Regular';
     -fx-font-size : 16 ;
+}
+
+.supprimer:hover
+{
+     -fx-effect: dropshadow(three-pass-box,#343434,39.295,0,0,0);
+    -fx-text-fill : #fff ;
+    -fx-background-radius: 5;
+ 
+    -fx-font-family : 'Barlow Regular';
+    -fx-font-size : 16 ;
+}
+
+.envoyer
+{
+    -fx-background-color :  #E3051A;
+    -fx-font-family : "Barlow Bold";
+    -fx-font-size: 14;
+     -fx-text-fill : #fff ;
+     -fx-background-radius: 5;
+    
+}
+
+.envoyer:hover
+{
+    -fx-effect: dropshadow(three-pass-box,#E3051A,39.295,0,0,0);
+    -fx-text-fill : #fff ;
+    -fx-background-radius: 5;
+    -fx-font-size: 14;
 }

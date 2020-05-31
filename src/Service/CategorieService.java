@@ -26,6 +26,9 @@ public class CategorieService implements IService<Service>
 
     public CategorieService() {
     }
+    
+    
+ 
    
     public void ajouter(Service c) {
         try {

@@ -1,151 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Pagination?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.Slider?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="548.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleur.ProduitsrentController">
+<AnchorPane fx:id="details" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="608.0" style="-fx-background-color: #cbcbc3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ProduitsrentController">
    <children>
-      <AnchorPane prefHeight="548.0" prefWidth="297.0" style="-fx-background-color: #242424;">
+      <AnchorPane fx:id="box1" layoutX="14.0" layoutY="21.0" prefHeight="147.0" prefWidth="298.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
          <children>
-            <Label layoutX="22.0" layoutY="191.0" prefHeight="17.0" prefWidth="76.0" text="Catégorie" textFill="#cbcbc3">
-               <font>
-                  <Font name="Century Gothic" size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="prixmaxlabel" layoutX="197.0" layoutY="235.0" text="Prix" textFill="#cbcbc3">
-               <font>
-                  <Font name="Century Gothic" size="12.0" />
-               </font>
-            </Label>
-            <ComboBox fx:id="cat" layoutX="117.0" layoutY="188.0" prefHeight="25.0" prefWidth="156.0" promptText="Choisir une catégorie" />
-            <Slider fx:id="prixmax" layoutX="137.0" layoutY="258.0" />
-            <Slider fx:id="prixmin" layoutX="137.0" layoutY="335.0" />
-            <Label layoutX="22.0" layoutY="68.0" prefHeight="30.0" prefWidth="128.0" text="Filtrer par : " textFill="#cbcbc3">
-               <font>
-                  <Font name="Century Gothic" size="20.0" />
-               </font>
-            </Label>
-            <Separator layoutX="13.0" layoutY="117.0" prefHeight="5.0" prefWidth="271.0" />
-            <Label layoutX="28.0" layoutY="256.0" prefHeight="19.0" prefWidth="97.0" text="Prix Croissant" textFill="#cbcbc3">
-               <font>
-                  <Font name="Century Gothic" size="15.0" />
-               </font>
-            </Label>
-            <Label layoutX="13.0" layoutY="333.0" prefHeight="19.0" prefWidth="119.0" text="Prix Décroissant" textFill="#cbcbc3">
-               <font>
-                  <Font name="Century Gothic" size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="prixminlabel" layoutX="198.0" layoutY="307.0" text="Prix" textFill="#cbcbc3">
-               <font>
-                  <Font name="Century Gothic" size="12.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="backToHome" fitHeight="35.0" fitWidth="28.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#RetourPageAccueils" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../images/ic_reply_white_48dp.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="image1" fitHeight="119.0" fitWidth="107.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="115.0" layoutY="14.0" prefHeight="17.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: Bold; -fx-font-size: 14;" text="Name" />
+            <Label layoutX="113.0" layoutY="44.0" prefHeight="17.0" prefWidth="66.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: Bold; -fx-font-size: 14;" text="Category :" />
+            <Text layoutX="111.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: Bold; -fx-font-size: 14;" text="Price :" wrappingWidth="59.306640625" />
+            <Button layoutX="218.0" layoutY="108.0" mnemonicParsing="false" onAction="#details0" styleClass="details" stylesheets="@../../../Style/buttonStyle.css" text="Details">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label layoutX="112.0" layoutY="74.0" prefHeight="17.0" prefWidth="76.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: Bold; -fx-font-size: 14;" text="Reference : " />
+            <Label fx:id="nom1" layoutX="188.0" layoutY="14.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 14;" text="Label" />
+            <Label fx:id="categorie1" layoutX="194.0" layoutY="45.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 14;" text="Label" />
+            <Label fx:id="reference1" layoutX="201.0" layoutY="75.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 14;" text="Label" />
+            <Label fx:id="prix1" layoutX="153.0" layoutY="104.0" prefHeight="18.0" prefWidth="59.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 14;" text="Label" />
          </children>
       </AnchorPane>
-      <Pane layoutX="294.0" prefHeight="83.0" prefWidth="645.0" style="-fx-background-color: #242424;">
+      <AnchorPane fx:id="box2" layoutX="302.0" layoutY="25.0" prefHeight="140.0" prefWidth="282.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
          <children>
-         
-            <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="319.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../images/search.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="52.0" layoutY="37.0" prefHeight="19.0" prefWidth="107.0" text="Rechercher" textFill="#cbcbc3">
-               <font>
-                  <Font name="Century Gothic" size="15.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <AnchorPane layoutX="297.0" layoutY="82.0" prefHeight="466.0" prefWidth="638.0">
-         <children>
-            <AnchorPane fx:id="box1" layoutX="26.0" layoutY="24.0" prefHeight="140.0" prefWidth="271.0">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <children>
-                  <ImageView fx:id="image1" fitHeight="119.0" fitWidth="107.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="115.0" layoutY="14.0" prefHeight="17.0" prefWidth="52.0" text="Nom" />
-                  <Label layoutX="113.0" layoutY="44.0" prefHeight="17.0" prefWidth="66.0" text="Categorie :" />
-                  <Text layoutX="111.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix : " wrappingWidth="59.306640625" />
-                  <Button layoutX="208.0" layoutY="103.0" mnemonicParsing="false" onAction="#details0" text="Details" />
-                  <Label layoutX="112.0" layoutY="74.0" prefHeight="17.0" prefWidth="76.0" text="Reference : " />
-                  <Label fx:id="nom1" layoutX="188.0" layoutY="14.0" text="Label" />
-                  <Label fx:id="categorie1" layoutX="194.0" layoutY="45.0" text="Label" />
-                  <Label fx:id="reference1" layoutX="201.0" layoutY="75.0" text="Label" />
-                  <Label fx:id="prix1" layoutX="153.0" layoutY="106.0" text="Label" />
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="box2" layoutX="330.0" layoutY="24.0" prefHeight="140.0" prefWidth="271.0">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <children>
-                  <ImageView fx:id="image2" fitHeight="109.0" fitWidth="107.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="115.0" layoutY="14.0" prefHeight="17.0" prefWidth="52.0" text="Nom" />
-                  <Label layoutX="113.0" layoutY="44.0" prefHeight="17.0" prefWidth="66.0" text="Categorie :" />
-                  <Text layoutX="111.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix : " wrappingWidth="59.306640625" />
-                  <Button layoutX="208.0" layoutY="103.0" mnemonicParsing="false" onAction="#details1" text="Details" />
-                  <Label layoutX="112.0" layoutY="74.0" prefHeight="17.0" prefWidth="76.0" text="Reference : " />
-                  <Label fx:id="nom2" layoutX="188.0" layoutY="14.0" text="Label" />
-                  <Label fx:id="categorie2" layoutX="194.0" layoutY="45.0" text="Label" />
-                  <Label fx:id="reference2" layoutX="201.0" layoutY="75.0" text="Label" />
-                  <Label fx:id="prix2" layoutX="156.0" layoutY="106.0" text="Label" />
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="box3" layoutX="26.0" layoutY="226.0" prefHeight="140.0" prefWidth="271.0">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <children>
-                  <ImageView fx:id="image3" fitHeight="102.0" fitWidth="97.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="115.0" layoutY="14.0" prefHeight="17.0" prefWidth="52.0" text="Nom" />
-                  <Label layoutX="113.0" layoutY="44.0" prefHeight="17.0" prefWidth="66.0" text="Categorie :" />
-                  <Text layoutX="111.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix : " wrappingWidth="59.306640625" />
-                  <Button layoutX="208.0" layoutY="103.0" mnemonicParsing="false" onAction="#details3" text="Details" />
-                  <Label layoutX="112.0" layoutY="74.0" prefHeight="17.0" prefWidth="76.0" text="Reference : " />
-                  <Label fx:id="nom3" layoutX="188.0" layoutY="14.0" text="Label" />
-                  <Label fx:id="categorie3" layoutX="194.0" layoutY="45.0" text="Label" />
-                  <Label fx:id="reference3" layoutX="201.0" layoutY="75.0" text="Label" />
-                  <Label fx:id="prix3" layoutX="156.0" layoutY="106.0" text="Label" />
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="box4" layoutX="322.0" layoutY="216.0" prefHeight="159.0" prefWidth="288.0">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <children>
-                  <ImageView fx:id="image4" fitHeight="120.0" fitWidth="119.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="129.0" layoutY="23.0" prefHeight="17.0" prefWidth="52.0" text="Nom" />
-                  <Label layoutX="127.0" layoutY="53.0" prefHeight="17.0" prefWidth="66.0" text="Categorie :" />
-                  <Text layoutX="125.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix : " wrappingWidth="59.306640625" />
-                  <Button layoutX="222.0" layoutY="112.0" mnemonicParsing="false" onAction="#details14" text="Details" />
-                  <Label layoutX="126.0" layoutY="83.0" prefHeight="17.0" prefWidth="76.0" text="Reference : " />
-                  <Label fx:id="nom4" layoutX="202.0" layoutY="23.0" text="Label" />
-                  <Label fx:id="categorie4" layoutX="208.0" layoutY="54.0" text="Label" />
-                  <Label fx:id="reference4" layoutX="215.0" layoutY="84.0" text="Label" />
-                  <Label fx:id="prix4" layoutX="170.0" layoutY="115.0" text="Label" />
-               </children>
-            </AnchorPane>
-            <Pagination fx:id="paginator" layoutX="198.0" layoutY="361.0" prefHeight="91.0" prefWidth="282.0" />
+            <ImageView fx:id="image2" fitHeight="109.0" fitWidth="107.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="115.0" layoutY="14.0" prefHeight="17.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: Bold; -fx-font-size: 14;" text="Name" />
+            <Label layoutX="113.0" layoutY="44.0" prefHeight="17.0" prefWidth="66.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: Bold; -fx-font-size: 14;" text="Category :" />
+            <Text layoutX="111.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: Bold; -fx-font-size: 14;" text="Price :" wrappingWidth="59.306640625" />
+            <Button layoutX="211.0" layoutY="108.0" mnemonicParsing="false" onAction="#details1" styleClass="details" stylesheets="@../../../Style/buttonStyle.css" text="Details">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label layoutX="112.0" layoutY="74.0" prefHeight="17.0" prefWidth="76.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: Bold; -fx-font-size: 14;" text="Reference : " />
+            <Label fx:id="nom2" layoutX="188.0" layoutY="14.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 14;" text="Label" />
+            <Label fx:id="categorie2" layoutX="194.0" layoutY="45.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 14;" text="Label" />
+            <Label fx:id="reference2" layoutX="201.0" layoutY="75.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 14;" text="Label" />
+            <Label fx:id="prix2" layoutX="153.0" layoutY="104.0" prefHeight="15.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 14;" text="Label" />
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="box3" layoutX="14.0" layoutY="228.0" prefHeight="159.0" prefWidth="288.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <ImageView fx:id="image3" fitHeight="120.0" fitWidth="107.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="115.0" layoutY="14.0" prefHeight="17.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: Bold; -fx-font-size: 14;" text="Name" />
+            <Label layoutX="113.0" layoutY="44.0" prefHeight="17.0" prefWidth="66.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: Bold; -fx-font-size: 14;" text="Category :" />
+            <Text layoutX="111.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: Bold; -fx-font-size: 14;" text="Price :" wrappingWidth="59.306640625" />
+            <Button layoutX="218.0" layoutY="120.0" mnemonicParsing="false" onAction="#details3" styleClass="details" stylesheets="@../../../Style/buttonStyle.css" text="Details">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label layoutX="112.0" layoutY="74.0" prefHeight="17.0" prefWidth="76.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: Bold; -fx-font-size: 14;" text="Reference : " />
+            <Label fx:id="nom3" layoutX="188.0" layoutY="14.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 14;" text="Label" />
+            <Label fx:id="categorie3" layoutX="194.0" layoutY="45.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 14;" text="Label" />
+            <Label fx:id="reference3" layoutX="201.0" layoutY="75.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 14;" text="Label" />
+            <Label fx:id="prix3" layoutX="156.0" layoutY="106.0" prefHeight="15.0" prefWidth="46.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 14;" text="Label" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="box4" layoutX="302.0" layoutY="222.0" prefHeight="171.0" prefWidth="282.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <ImageView fx:id="image4" fitHeight="127.0" fitWidth="119.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="129.0" layoutY="23.0" prefHeight="17.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: Bold; -fx-font-size: 14;" text="Name" />
+            <Label layoutX="127.0" layoutY="53.0" prefHeight="17.0" prefWidth="66.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: Bold; -fx-font-size: 14;" text="Category :" />
+            <Text layoutX="125.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: Bold; -fx-font-size: 14;" text="Price :" wrappingWidth="59.306640625" />
+            <Button layoutX="218.0" layoutY="131.0" mnemonicParsing="false" onAction="#details14" styleClass="details" stylesheets="@../../../Style/buttonStyle.css" text="Details">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label layoutX="126.0" layoutY="83.0" prefHeight="17.0" prefWidth="76.0" style="-fx-font-family: Barlow Regular; -fx-font-weight: Bold; -fx-font-size: 14;" text="Reference : " />
+            <Label fx:id="nom4" layoutX="190.0" layoutY="23.0" prefHeight="18.0" prefWidth="46.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 14;" text="Label" />
+            <Label fx:id="categorie4" layoutX="208.0" layoutY="54.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 14;" text="Label" />
+            <Label fx:id="reference4" layoutX="215.0" layoutY="84.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 14;" text="Label" />
+            <Label fx:id="prix4" layoutX="167.0" layoutY="108.0" prefHeight="28.0" prefWidth="52.0" style="-fx-font-family: Barlow Regular; -fx-font-size: 14;" text="Label" />
+         </children>
+      </AnchorPane>
+      <Pagination fx:id="paginator" layoutX="173.0" layoutY="392.0" prefHeight="91.0" prefWidth="282.0" style="-fx-font-family: Barlow Regular;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Pagination>
    </children>
 </AnchorPane>
